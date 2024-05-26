@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Manrope";
+  src: url("./assets/fonts/Manrope-Bold.ttf") format("ttf"),
+    url("./assets/fonts/Manrope-ExtraBold.ttf") format("ttf"),
+    url("./assets/fonts/Manrope-ExtraLight.ttf") format("ttf"),
+    url("./assets/fonts/Manrope-Light.ttf") format("ttf"),
+    url("./assets/fonts/Manrope-Medium.ttf") format("ttf"),
+    url("./assets/fonts/Manrope-Regular.ttf") format("ttf"),
+    url("./assets/fonts/Manrope-SemiBold.ttf") format("ttf");
+}
+* {
+  text-decoration: none;
+}
+body {
+  font-family: "Manrope", sans-serif;
+}
