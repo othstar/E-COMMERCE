@@ -2,7 +2,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
 import data from "../../Json/data.json";
-import { Product } from "../../types/types";
+import { Product } from "../../static/types";
 
 const selectProductsState = (state) => state.products;
 

@@ -16,7 +16,7 @@
 .showcase-descr {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 40%;
   color: #f1f1f1;
 }
 .showcase-descr span {
@@ -26,9 +26,15 @@
 
 .showcase-descr h2 {
   text-transform: uppercase;
-  font-size: 36px;
+  font-size: 42px;
 }
 
-.showcase-logo {
-  padding-right: 100px;
+.showcase-descr a {
+  width: 25%;
+  border: 1px solid transparent;
+  background-color: #d87d4a;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 20px;
 }

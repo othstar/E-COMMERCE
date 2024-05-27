@@ -4,9 +4,9 @@ import {
   getProducts,
   selectProducts,
 } from "../../store/Products/Products.slice";
-import { Product } from "../../types/types";
+import { Product } from "../../static/types";
 import { NavLink } from "react-router-dom";
-import Showcase from "../../assets/product-xx99-mark-two-headphones/desktop/Bitmap.png";
+import Showcase from "../../assets/product-xx99-mark-two-headphones/desktop/file.png";
 import "./style.css";
 
 const Home = () => {
@@ -55,7 +55,11 @@ const Home = () => {
             <NavLink to={`/product/${product.id}`}>see product</NavLink>
           </div>
           <div className="showcase-logo">
-            <img src={Showcase} alt={product.name} style={{ height: 500 }} />
+            <img
+              src={Showcase}
+              alt={product.name}
+              style={{ height: 500, width: 600 }}
+            />
           </div>
         </div>
       ))}
