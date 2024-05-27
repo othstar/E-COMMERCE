@@ -18,7 +18,7 @@ export const getProducts = createAsyncThunk(
   }
 );
 
-const initialState = {
+const InitialState = {
   items: [] as Product[],
   status: "idle",
   error: null,
@@ -26,7 +26,7 @@ const initialState = {
 
 const ProductsSlice = createSlice({
   name: "products",
-  initialState: {},
+  initialState: InitialState,
   reducers: {},
   extraReducers(builder) {
     builder

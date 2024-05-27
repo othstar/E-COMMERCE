@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
+import Home from "../pages/Home/Home";
 import Product from "../pages/Product";
-import Headphones from "../pages/Headphones";
-import Earphones from "../pages/Earphones";
-import Speakers from "../pages/Speakers";
+import Headphones from "../pages/Headphones/Headphones";
+import Earphones from "../pages/Earphones/Earphones";
+import Speakers from "../pages/Speakers/Speakers";
 
 const Router = () => {
   return (

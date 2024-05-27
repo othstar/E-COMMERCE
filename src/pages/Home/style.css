@@ -1,0 +1,34 @@
+.underline {
+  margin: 0 auto;
+  width: 75%;
+  border: 1px solid #979797;
+  margin-bottom: 3rem;
+}
+
+.showcase {
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.showcase-descr {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  color: #f1f1f1;
+}
+.showcase-descr span {
+  color: #979797 !important;
+  text-transform: uppercase;
+}
+
+.showcase-descr h2 {
+  text-transform: uppercase;
+  font-size: 36px;
+}
+
+.showcase-logo {
+  padding-right: 100px;
+}
