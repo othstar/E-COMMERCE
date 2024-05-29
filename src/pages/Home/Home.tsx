@@ -8,6 +8,7 @@ import { Product } from "../../static/types";
 import { NavLink } from "react-router-dom";
 import Showcase from "../../assets/product-xx99-mark-two-headphones/desktop/file.png";
 import "./style.css";
+import Filter from "../../components/Filter";
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -58,11 +59,12 @@ const Home = () => {
             <img
               src={Showcase}
               alt={product.name}
-              style={{ height: 500, width: 600 }}
+              style={{ height: 600, width: 600 }}
             />
           </div>
         </div>
       ))}
+      <Filter />
     </div>
   );
 };
