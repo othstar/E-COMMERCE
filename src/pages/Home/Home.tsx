@@ -43,7 +43,7 @@ const Home = () => {
   );
 
   return (
-    <div>
+    <div style={{background: "#101010"}}>
       {filteredProducts.map((product: Product) => (
         <div key={product.id} className="showcase">
           <div className="showcase-descr">
@@ -64,7 +64,9 @@ const Home = () => {
           </div>
         </div>
       ))}
+      <div style={{background: "#f1f1f1", marginTop: "30px"}}>
       <Filter />
+      </div>
     </div>
   );
 };
