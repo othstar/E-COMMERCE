@@ -1,26 +1,19 @@
 import { NavLink } from "react-router-dom";
-import "./style.css"
+import "./style.css";
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import {
-  getProducts,
-  selectProducts,
-} from "../../store/Products/Products.slice";
+import { getProducts, selectProducts } from "../../store/Products/Products.slice";
 import { Product } from "../../static/types";
 
-
 interface FilterCardProps {
-    productId: number;
-    imageSrc: string;
+  productId: number;
+  imageSrc: string;
+}
 
-  }
-
-const FilterCard = ({productId, imageSrc }: FilterCardProps) => {
-    const dispatch = useAppDispatch();
+const FilterCard = ({ productId, imageSrc }: FilterCardProps) => {
+  const dispatch = useAppDispatch();
   const products = useAppSelector(selectProducts);
-  const [productImages, setProductImages] = useState<{ [key: number]: string }>(
-    {}
-  );
+  const [productImages, setProductImages] = useState<{ [key: number]: string }>({});
 
   useEffect(() => {
     dispatch(getProducts());
@@ -43,6 +36,7 @@ const FilterCard = ({productId, imageSrc }: FilterCardProps) => {
       loadImages();
     }
   }, [products]);
+
   const filteredProduct = products.find((product: Product) => product.id === productId);
 
   return (
@@ -52,14 +46,16 @@ const FilterCard = ({productId, imageSrc }: FilterCardProps) => {
           <img
             src={imageSrc}
             alt={filteredProduct.name}
-            style={{height: "200px", width: "200px"}}
+            style={{ height: "200px", width: "200px" }}
           />
-          <h3>{filteredProduct.category}</h3>
-          <NavLink to={`/${filteredProduct.category}`}>shop</NavLink>
+          <h3 className="filter-title">{filteredProduct.category}</h3>
+          <NavLink to={`/${filteredProduct.category}`} className="filter-navlink">
+            shop
+          </NavLink>
         </div>
       )}
     </div>
-    )
-}
+  );
+};
 
 export default FilterCard;

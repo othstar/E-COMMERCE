@@ -1,0 +1,17 @@
+.footer-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+
+.logo-descr {
+    padding: 1rem 0;
+}
+
+.social-networks {
+    display: flex;
+    justify-content: flex-end;
+}
+

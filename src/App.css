@@ -3,7 +3,7 @@
 }
 * {
   text-decoration: none;
-  color: #f1f1f1 !important;
+  color: #f1f1f1;
   list-style: none;
   
 }
@@ -18,3 +18,38 @@ body {
   background-color: #101010;
   font-family: "Manrope", sans-serif;
 }
+
+
+.filter-container {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.filter-container h3 {
+  color: #101010;
+  margin: 10px 0;
+}
+
+.filter-navlink {
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-navlink:link,
+.filter-navlink:visited {
+  color: gray;
+}
+
+.filter-navlink:hover {
+  background-color: #e0e0e0;
+}
+
