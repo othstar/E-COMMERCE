@@ -1,8 +1,13 @@
+import 'normalize.css';
 import "./App.css";
 import Layout from "./layout";
 
 function App() {
-  return <Layout />;
+  return (
+  <>
+  <Layout />
+  </>
+  );
 }
 
 export default App;

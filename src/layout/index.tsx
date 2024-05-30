@@ -5,7 +5,7 @@ import Router from "../router";
 const Layout = () => {
   return (
     <div className="layout-cotainer">
-      <div className="header-container" style={{background: "#101010"}}>
+      <div className="header-container" style={{position: 'sticky', top: 0}} >
         <Header />
       </div>
       <div className="main-container">
