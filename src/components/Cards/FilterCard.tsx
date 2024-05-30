@@ -52,7 +52,7 @@ const FilterCard = ({productId, imageSrc }: FilterCardProps) => {
           <img
             src={imageSrc}
             alt={filteredProduct.name}
-            
+            style={{height: "200px", width: "200px"}}
           />
           <h3>{filteredProduct.category}</h3>
           <NavLink to={`/${filteredProduct.category}`}>shop</NavLink>

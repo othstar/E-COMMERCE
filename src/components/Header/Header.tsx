@@ -4,7 +4,7 @@ import "./style.css";
 const Header = () => {
   return (
     <header>
-      <div className="navbar">
+      <div className="navbar container">
         <div className="logo">
           <NavLink to={"/"}>audiophile</NavLink>
         </div>
@@ -24,7 +24,6 @@ const Header = () => {
         </ul>
         <div className="cart">cart</div>
       </div>
-      <div className="underline"></div>
     </header>
   );
 };

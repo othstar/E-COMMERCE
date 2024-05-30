@@ -1,0 +1,14 @@
+.underline {
+    width: 80%;
+    height: 1px;
+    background-color: #c1bfbf;
+    margin: 0 auto;
+}
+.showcase {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+

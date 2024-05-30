@@ -5,7 +5,7 @@ import FilterCard from "../Cards";
 import "./style.css"
 const Filter = () => {
     return (
-      <>
+      <div className="filters">
       <FilterCard
         productId={3}
         imageSrc={Headphones}
@@ -18,7 +18,7 @@ const Filter = () => {
         productId={1}
         imageSrc={Earphones}
       />
-    </>
+    </div>
     )
 }
 
