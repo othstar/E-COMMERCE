@@ -5,7 +5,6 @@
   text-decoration: none;
   color: #f1f1f1;
   list-style: none;
-  
 }
 
 .container {
@@ -16,9 +15,8 @@
 body {
   width: 100%;
   background-color: #101010;
-  font-family: "Manrope", sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
-
 
 .filter-container {
   width: 30%;
@@ -52,4 +50,3 @@ body {
 .filter-navlink:hover {
   background-color: #e0e0e0;
 }
-
