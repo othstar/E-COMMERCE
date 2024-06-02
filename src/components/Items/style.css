@@ -1,12 +1,16 @@
-.item-container {
+.section {
   display: flex;
-  align-items: flex-start;
-  flex-direction: row;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  flex-direction: column-reverse;
+}
+
+.item-container {
+  height: 370px;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  border: 1px solid transparent;
+  padding: 20px 150px 20px 20px;
+  margin-bottom: 2rem;
 }
 
 .item-container:nth-child(even) {
@@ -14,19 +18,68 @@
   flex-direction: row-reverse;
 }
 
-.image-container {
-  flex: 0 0 150px;
-  margin-right: 20px;
+.item-container:nth-child(3) {
+  background-image: url(../../assets/home/desktop/image-speaker-zx9.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #d87d4a;
 }
 
-.image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+.item-container:nth-child(3) a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #101010;
+  color: #f1f1f1;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid #101010;
+  border-radius: 4px;
+}
+
+.item-container:nth-child(3) a:hover {
+  background-color: #f1f1f1;
+  color: #101010;
+}
+
+.item-container:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  background-image: url(../../assets/home/desktop/image-speaker-zx7.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right top;
+  background-color: rgb(214, 214, 214);
+}
+
+.item-container:nth-child(2) a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: transparent;
+  color: #101010;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid #101010;
+  border-radius: 4px;
+}
+
+.item-container:nth-child(2) a:hover {
+  background-color: #101010;
+  color: #f1f1f1;
+}
+
+.item-container:nth-child(1) {
+  background-image: url(../../assets/home/desktop/image-earphones-yx1.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right top;
+  background-color: rgb(214, 214, 214);
 }
 
 .item-info {
-  flex: 1;
+  width: 50%;
+  padding-left: 100px;
 }
 
 .item-info h3 {

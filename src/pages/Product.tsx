@@ -1,74 +1,45 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import {
-getProducts,
-selectProducts,
-} from "../store/Products/Products.slice";
-import { Product } from "../static/types";
-import { NavLink } from "react-router-dom";
-
-
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { getProducts, selectProducts } from '../store/Products/Products.slice';
+import { Product } from '../static/types';
+import { NavLink } from 'react-router-dom';
 
 const Productfunc = () => {
   const params = useParams();
   console.log(params);
 
-
   const dispatch = useAppDispatch();
   const products = useAppSelector(selectProducts);
-  const [productImages, setProductImages] = useState<{ [key: number]: string }>(
-    {}
-  );
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
-  useEffect(() => {
-    if (products) {
-      const loadImages = async () => {
-        const images: { [key: number]: string } = {};
-        for (const product of products) {
-          try {
-            const image = await import(`../${product.image.desktop}`);
-            images[product.id] = image.default;
-          } catch (error) {
-            console.error(`Image load error: ${product.image.desktop}`, error);
-          }
-        }
-        setProductImages(images);
-      };
-      loadImages();
-    }
-  }, [products]);
   const filteredProducts = products.filter(
-    (product: Product) => product.id === 4
+    (product: Product) => product.id === 4,
   );
-  return (   
-  <div>
-    {filteredProducts.map((product: Product) => (
-      <div key={product.id} className="showcase">
-        <div className="showcase-descr">
-          <span>new product</span>
-          <h2>{product.name}</h2>
-          <p>
-            Experience natural, lifelike audio and exceptional build quality
-            made for the passionate music enthusiast.
-          </p>
-          <NavLink to={`/product/${product.id}`}>see product</NavLink>
+  return (
+    <div>
+      {filteredProducts.map((product: Product) => (
+        <div key={product.id} className="showcase">
+          <div className="showcase-descr">
+            <span>new product</span>
+            <h2>{product.name}</h2>
+            <p>
+              Experience natural, lifelike audio and exceptional build quality
+              made for the passionate music enthusiast.
+            </p>
+            <NavLink to={`/product/${product.id}`}>see product</NavLink>
+          </div>
+          <div className="showcase-logo">
+            <img alt={product.name} style={{ height: 600, width: 600 }} />
+          </div>
         </div>
-        <div className="showcase-logo">
-          <img
-            alt={product.name}
-            style={{ height: 600, width: 600 }}
-          />
-        </div>
-      </div>
-    ))}
-    <div style={{background: "#f1f1f1", marginTop: "30px"}}>
+      ))}
+      <div style={{ background: '#f1f1f1', marginTop: '30px' }}></div>
     </div>
-  </div>);
+  );
 };
 
 export default Productfunc;

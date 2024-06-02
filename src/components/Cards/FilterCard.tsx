@@ -1,9 +1,12 @@
-import { NavLink } from "react-router-dom";
-import "./style.css";
-import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getProducts, selectProducts } from "../../store/Products/Products.slice";
-import { Product } from "../../static/types";
+import { NavLink } from 'react-router-dom';
+import './style.css';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import {
+  getProducts,
+  selectProducts,
+} from '../../store/Products/Products.slice';
+import { Product } from '../../static/types';
 
 interface FilterCardProps {
   productId: number;
@@ -13,31 +16,14 @@ interface FilterCardProps {
 const FilterCard = ({ productId, imageSrc }: FilterCardProps) => {
   const dispatch = useAppDispatch();
   const products = useAppSelector(selectProducts);
-  const [productImages, setProductImages] = useState<{ [key: number]: string }>({});
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
-  useEffect(() => {
-    if (products) {
-      const loadImages = async () => {
-        const images: { [key: number]: string } = {};
-        for (const product of products) {
-          try {
-            const image = await import(`../${product.image.desktop}`);
-            images[product.id] = image.default;
-          } catch (error) {
-            console.error(`Image load error: ${product.image.desktop}`, error);
-          }
-        }
-        setProductImages(images);
-      };
-      loadImages();
-    }
-  }, [products]);
-
-  const filteredProduct = products.find((product: Product) => product.id === productId);
+  const filteredProduct = products.find(
+    (product: Product) => product.id === productId,
+  );
 
   return (
     <div>
@@ -46,10 +32,13 @@ const FilterCard = ({ productId, imageSrc }: FilterCardProps) => {
           <img
             src={imageSrc}
             alt={filteredProduct.name}
-            style={{ height: "70%", width: "90%" }}
+            style={{ height: '70%', width: '90%' }}
           />
           <h3 className="filter-title">{filteredProduct.category}</h3>
-          <NavLink to={`/${filteredProduct.category}`} className="filter-navlink">
+          <NavLink
+            to={`/${filteredProduct.category}`}
+            className="filter-navlink"
+          >
             shop
           </NavLink>
         </div>
