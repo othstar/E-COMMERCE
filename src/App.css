@@ -30,6 +30,7 @@ body {
 .filter-container h3 {
   color: #101010;
   margin: 10px 0;
+  text-transform: capitalize;
 }
 
 .filter-navlink {
@@ -48,5 +49,5 @@ body {
 }
 
 .filter-navlink:hover {
-  background-color: #e0e0e0;
+  color: #d87d4a;
 }

@@ -1,0 +1,23 @@
+.presentation {
+  display: flex;
+  padding: 5rem 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.description {
+  width: 50%;
+}
+.description h3 {
+  color: #101010;
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+.description span {
+  color: #d87d4a;
+}
+
+.description p {
+  color: gray;
+}

@@ -1,14 +1,27 @@
 .underline {
-    width: 80%;
-    height: 1px;
-    background-color: #c1bfbf;
-    margin: 0 auto;
+  width: 80%;
+  height: 1px;
+  background-color: #c1bfbf;
+  margin: 0 auto;
 }
 .showcase {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
+.navlink-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d87d4a;
+  color: #f1f1f1;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-
+.navlink-button:hover {
+  background-color: #fbaf85;
+}

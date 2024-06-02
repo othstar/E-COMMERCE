@@ -1,22 +1,46 @@
 header {
-    background-color: #101010;
+  background-color: #101010;
 }
 
+/* General styles for the navbar */
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 1rem 0;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  /* Assuming a black background for contrast */
 }
 
-
+.logo a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
 
 .categories {
-    display: flex;
-    gap: 1.5rem;
-    
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.categories li {
+  color: #f1f1f1;
+}
+
+.categories li a {
+  color: #f1f1f1;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.categories li a:hover {
+  color: #d87d4a;
+}
+
+.cart {
+  color: #f1f1f1;
+  font-size: 18px;
 }

@@ -9,6 +9,11 @@
   background-color: #fff;
 }
 
+.item-container:nth-child(even) {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .image-container {
   flex: 0 0 150px;
   margin-right: 20px;
@@ -39,12 +44,15 @@
   display: inline-block;
   margin-top: 10px;
   padding: 8px 12px;
-  background-color: #007bff;
-  color: white;
+  background-color: transparent;
+  color: #101010;
   text-decoration: none;
+  text-transform: uppercase;
+  border: 1px solid #101010;
   border-radius: 4px;
 }
 
 .item-info a:hover {
-  background-color: #0056b3;
+  background-color: #101010;
+  color: #f1f1f1;
 }

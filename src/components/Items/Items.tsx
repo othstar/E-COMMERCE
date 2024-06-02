@@ -37,46 +37,14 @@ const Items = () => {
     }
   }, [products]);
 
-  const productsId1 = products.filter((product: Product) => product.id === 1);
-  const productsId5 = products.filter((product: Product) => product.id === 5);
-  const productsId6 = products.filter((product: Product) => product.id === 6);
+  const filteredProducts = products.filter((product: Product) =>
+    [1, 5, 6].includes(product.id),
+  );
 
   return (
     <div className="container">
-      <div className="section section-id-6">
-        {productsId6.map((product: Product) => (
-          <div key={product.id} className="item-container ">
-            <div className="image-container">
-              <img src={productImages[product.id] || ''} alt={product.name} />
-            </div>
-            <div className="item-info">
-              <h3 className="item-name">{product.name}</h3>
-              <p className="item-description">{product.description}</p>
-              <NavLink to={`/${product.id}`} className="see-product-button">
-                See Product
-              </NavLink>
-            </div>
-          </div>
-        ))}
-        <div className="section section-id-5">
-          {productsId5.map((product: Product) => (
-            <div key={product.id} className="item-container ">
-              <div className="image-container">
-                <img src={productImages[product.id] || ''} alt={product.name} />
-              </div>
-              <div className="item-info">
-                <h3 className="item-name">{product.name}</h3>
-                <p className="item-description">{product.description}</p>
-                <NavLink to={`/${product.id}`} className="see-product-button">
-                  See Product
-                </NavLink>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="section section-id-1">
-        {productsId1.map((product: Product) => (
+      <div className="section">
+        {filteredProducts.map((product: Product) => (
           <div key={product.id} className="item-container">
             <div className="image-container">
               <img src={productImages[product.id] || ''} alt={product.name} />
