@@ -5,11 +5,11 @@ import {
   getProducts,
   selectProducts,
 } from '../../store/Products/Products.slice';
-import { Product } from '../../static/types';
-import { NavLink } from 'react-router-dom';
-import zx9 from '../../assets/home/desktop/image-speaker-zx9.png';
-import zx7 from '../../assets/home/desktop/image-speaker-zx7.jpg';
-import yx1 from '../../assets/home/desktop/image-earphones-yx1.jpg';
+// import { Product } from '../../static/types';
+// import { NavLink } from 'react-router-dom';
+// import zx9 from '../../assets/home/desktop/image-speaker-zx9.png';
+// import zx7 from '../../assets/home/desktop/image-speaker-zx7.jpg';
+// import yx1 from '../../assets/home/desktop/image-earphones-yx1.jpg';
 
 const Items = () => {
   const dispatch = useAppDispatch();
@@ -18,16 +18,16 @@ const Items = () => {
     dispatch(getProducts());
   }, [dispatch]);
 
-  const filteredProductFirst = products.filter((product: Product) =>
-    [6].includes(product.id),
-  );
-  const filteredProductSecond = products.filter((product: Product) =>
-    [5].includes(product.id),
-  );
+  // const filteredProductFirst = products.filter((product: Product) =>
+  //   [6].includes(product.id),
+  // );
+  // const filteredProductSecond = products.filter((product: Product) =>
+  //   [5].includes(product.id),
+  // );
 
-  const filteredProductThird = products.filter((product: Product) =>
-    [1].includes(product.id),
-  );
+  // const filteredProductThird = products.filter((product: Product) =>
+  //   [1].includes(product.id),
+  // );
 
   return (
     <div className="container">
