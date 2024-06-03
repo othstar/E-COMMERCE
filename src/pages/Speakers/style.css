@@ -1,6 +1,59 @@
 .speakers {
   background-color: #f1f1f1;
 }
+
 .categorie {
   background-color: #101010;
+}
+
+.main {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.speaker-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.speaker-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.speaker-descr {
+  width: 50%;
+}
+
+.speaker-descr span {
+  color: #d87d4a;
+}
+.speaker-descr h3 {
+  color: #101010;
+}
+
+.speaker-descr p {
+  color: gray;
+}
+
+.see-product-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #d87d4a;
+  color: #f1f1f1;
+  text-decoration: none;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.see-product-button:hover {
+  background-color: #fbaf85;
+}
+
+/* Style for the second speaker: picture on the right, description on the left */
+.container:nth-of-type(odd) .speaker-container {
+  flex-direction: row-reverse;
 }
