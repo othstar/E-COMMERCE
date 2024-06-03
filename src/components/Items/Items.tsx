@@ -1,10 +1,10 @@
 import './style.css';
-import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import {
-  getProducts,
-  selectProducts,
-} from '../../store/Products/Products.slice';
+// import { useEffect } from 'react';
+// import { useAppDispatch, useAppSelector } from '../../store/hooks';
+// import {
+//   getProducts,
+//   selectProducts,
+// } from '../../store/Products/Products.slice';
 // import { Product } from '../../static/types';
 // import { NavLink } from 'react-router-dom';
 // import zx9 from '../../assets/home/desktop/image-speaker-zx9.png';
@@ -12,11 +12,11 @@ import {
 // import yx1 from '../../assets/home/desktop/image-earphones-yx1.jpg';
 
 const Items = () => {
-  const dispatch = useAppDispatch();
-  const products = useAppSelector(selectProducts);
-  useEffect(() => {
-    dispatch(getProducts());
-  }, [dispatch]);
+  // const dispatch = useAppDispatch();
+  // const products = useAppSelector(selectProducts);
+  // useEffect(() => {
+  //   dispatch(getProducts());
+  // }, [dispatch]);
 
   // const filteredProductFirst = products.filter((product: Product) =>
   //   [6].includes(product.id),
