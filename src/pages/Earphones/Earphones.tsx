@@ -20,11 +20,11 @@ const Earphones = () => {
     dispatch(getProducts());
   }, [dispatch]);
 
-  const filteredProduct = products.filter((product: Product) =>
-    [1].includes(product.id),
+  const filteredProduct = products.filter(
+    (product: Product) => product.category === 'earphones',
   );
   return (
-    <div className="headphones">
+    <div className="earphones">
       <div className="categorie">
         <Categories categorieName="earphones" />
       </div>

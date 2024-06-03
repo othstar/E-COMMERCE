@@ -2,13 +2,11 @@ header {
   background-color: #101010;
 }
 
-/* General styles for the navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  /* Assuming a black background for contrast */
 }
 
 .logo a {

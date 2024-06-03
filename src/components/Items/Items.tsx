@@ -31,11 +31,11 @@ const Items = () => {
 
   return (
     <div className="container">
-      <div className="section">
+      {/* <div className="section">
         {filteredProductFirst.map((product: Product) => (
           <div
             key={product.id}
-            className="item-container"
+            className="item-container container"
             style={{ background: '#D87D4A' }}
           >
             <div className="image-info">
@@ -55,15 +55,17 @@ const Items = () => {
         ))}
         {filteredProductSecond.map((product: Product) => (
           <div key={product.id} className="item-container">
-            <img src={zx7} alt={product.slug} />
-            <div className="item-info">
-              <h3 className="item-name">{product.name}</h3>
-              <NavLink
-                to={`/product/${product.id}`}
-                className="see-product-button"
-              >
-                See Product
-              </NavLink>
+            <div className="image-container">
+              <img src={zx7} alt={product.slug} />
+              <div className="item-info">
+                <h3 className="item-name">{product.name}</h3>
+                <NavLink
+                  to={`/product/${product.id}`}
+                  className="see-product-button"
+                >
+                  See Product
+                </NavLink>
+              </div>
             </div>
           </div>
         ))}
@@ -82,7 +84,7 @@ const Items = () => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
