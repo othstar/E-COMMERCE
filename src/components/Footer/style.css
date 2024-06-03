@@ -1,17 +1,36 @@
 .footer-nav {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 0 auto;
-    padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
 }
 
-.logo-descr {
-    padding: 1rem 0;
+.logo-descr a {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo-descr p {
+  margin: 2rem 0;
+  font-size: 14px;
+}
+
+.logo-descr span {
+  font-size: 14px;
+}
+
+.footer-categories {
+  width: 100%;
+}
+
+.categories {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .social-networks {
-    display: flex;
-    justify-content: flex-end;
+  margin-top: 4.5rem;
+  margin-right: 4.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
 }
-

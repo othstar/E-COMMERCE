@@ -23,7 +23,6 @@ const Showcase = () => {
 
   return (
     <div>
-      <div className="underline"></div>
       {filteredProducts.map((product: Product) => (
         <div key={product.id} className="showcase container">
           <div className="showcase-descr">
