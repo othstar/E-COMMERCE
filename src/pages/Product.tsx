@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { getProducts, selectProducts } from '../store/Products/Products.slice';
 import { Product } from '../static/types';
