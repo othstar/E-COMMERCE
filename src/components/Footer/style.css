@@ -25,6 +25,7 @@
 .categories {
   display: flex;
   justify-content: space-evenly;
+  text-transform: uppercase;
 }
 
 .social-networks {
