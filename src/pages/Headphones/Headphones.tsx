@@ -24,7 +24,7 @@ const Headphones = () => {
   return (
     <div className="speakers">
       <div className="categorie">
-        <Categories categorieName="speakers" />
+        <Categories categorieName="headphones" />
       </div>
       <Filter />
       {filteredProduct.map((product: Product) => (
