@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
@@ -11,7 +12,10 @@ import Filter from '../../components/Filter';
 import Presentation from '../../components/Presentation';
 import './style.css';
 
-const Speakers = () => {
+const Type = () => {
+  const params = useParams<{ type: string }>();
+  console.log(params.type);
+
   const dispatch = useAppDispatch();
   const products = useAppSelector(selectProducts);
 
@@ -19,8 +23,9 @@ const Speakers = () => {
     dispatch(getProducts());
   }, [dispatch]);
 
+  const category = params.type;
   const filteredProduct = products.filter(
-    (product: Product) => product.category === 'speakers',
+    (product: Product) => product.category === category,
   );
 
   return (
@@ -41,7 +46,7 @@ const Speakers = () => {
               <h3>{product.name}</h3>
               <p>{product.description}</p>
               <NavLink
-                to={`/product/${product.id}`}
+                to={`/${product.category}/${product.id}`}
                 className="see-product-button"
               >
                 see Product
@@ -55,4 +60,4 @@ const Speakers = () => {
   );
 };
 
-export default Speakers;
+export default Type;

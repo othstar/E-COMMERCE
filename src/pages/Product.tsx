@@ -6,8 +6,8 @@ import { Product } from '../static/types';
 import { NavLink } from 'react-router-dom';
 
 const Productfunc = () => {
-  const params = useParams();
-  console.log(params);
+  const params = useParams<{ id: string }>();
+  console.log(params.id);
 
   const dispatch = useAppDispatch();
   const products = useAppSelector(selectProducts);
@@ -16,28 +16,33 @@ const Productfunc = () => {
     dispatch(getProducts());
   }, [dispatch]);
 
+  const productId = Number(params.id);
+
   const filteredProducts = products.filter(
-    (product: Product) => product.id === 4,
+    (product: Product) => product.id === productId,
   );
   return (
-    <div>
+    <div className="earphones">
       {filteredProducts.map((product: Product) => (
-        <div key={product.id} className="showcase">
-          <div className="showcase-descr">
-            <span>new product</span>
-            <h2>{product.name}</h2>
-            <p>
-              Experience natural, lifelike audio and exceptional build quality
-              made for the passionate music enthusiast.
-            </p>
-            <NavLink to={`/product/${product.id}`}>see product</NavLink>
+        <div key={product.id} className="product-container container">
+          <div className="img-container">
+            <img src={product.image.desktop} alt={product.name} />
           </div>
-          <div className="showcase-logo">
-            <img alt={product.name} style={{ height: 600, width: 600 }} />
+          <div className="descr-container">
+            {product.new ? <span>new product</span> : null}
+
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+            <span>{product.price}$</span>
+            <NavLink
+              to={`/${product.category}/${product.id}`}
+              className="see-product-button"
+            >
+              add to cart
+            </NavLink>
           </div>
         </div>
       ))}
-      <div style={{ background: '#f1f1f1', marginTop: '30px' }}></div>
     </div>
   );
 };
