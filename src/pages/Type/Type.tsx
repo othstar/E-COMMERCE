@@ -1,11 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import './style.css';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import {
-  getProducts,
-  selectProducts,
-} from '../../store/Products/Products.slice';
+import { getProducts } from '../../store/Products/Products.async.Actions';
 import { Product } from '../../static/types';
 import Categories from '../../components/Categories';
 import Filter from '../../components/Filter';
@@ -17,31 +15,32 @@ const Type = () => {
   console.log(params.type);
 
   const dispatch = useAppDispatch();
-  const products = useAppSelector(selectProducts);
+  const data = useAppSelector((state) => state.products.data);
+  // const status = useAppSelector((state) => state.products.status);
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
   const category = params.type;
-  const filteredProduct = products.filter(
+  const filteredProduct = data.filter(
     (product: Product) => product.category === category,
   );
 
   return (
-    <div className="speakers">
+    <div className="type">
       <div className="categorie">
-        <Categories categorieName="speakers" />
+        <Categories categorieName={category} />
       </div>
       <Filter />
 
       {filteredProduct.map((product: Product) => (
         <div key={product.id} className="main container">
-          <div className="speaker-container">
-            <div className="speaker-image">
+          <div className="type-container">
+            <div className="type-image">
               <img src={product.image.mobile} alt={product.name} />
             </div>
-            <div className="speaker-descr">
+            <div className="type-descr">
               {product.new ? <span>new product</span> : null}
               <h3>{product.name}</h3>
               <p>{product.description}</p>

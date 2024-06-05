@@ -1,46 +1,37 @@
-//@ts-nocheck
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { createSelector } from "reselect";
-import data from "../../Json/data.json";
-import { Product } from "../../static/types";
+import { createSlice } from '@reduxjs/toolkit';
+import { Product } from '../../static/types';
+import { getProducts } from './Products.async.Actions';
 
-const selectProductsState = (state) => state.products;
+type InitialState = {
+  status: 'idle' | 'loading' | 'loaded' | 'failed';
+  data: Product[];
+  error: undefined | string;
+};
 
-export const selectProducts = createSelector(
-  selectProductsState,
-  (productsState) => productsState.items
-);
-
-export const getProducts = createAsyncThunk(
-  "products/getProducts",
-  async () => {
-    return data as Product[];
-  }
-);
-
-const InitialState = {
-  items: [] as Product[],
-  status: "idle",
-  error: null,
+const initialState: InitialState = {
+  data: [],
+  status: 'idle',
+  error: undefined,
 };
 
 const ProductsSlice = createSlice({
-  name: "products",
-  initialState: InitialState,
+  name: 'products',
+  initialState,
   reducers: {},
   extraReducers(builder) {
-    builder
-      .addCase(getProducts.pending, (state) => {
-        state.status = "loading";
-      })
-      .addCase(getProducts.fulfilled, (state, action) => {
-        state.status = "succeeded";
-        state.items = action.payload;
-      })
-      .addCase(getProducts.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error.message;
-      });
+    builder.addCase(getProducts.pending, (state) => {
+      state.status = 'loading';
+    });
+    builder.addCase(getProducts.fulfilled, (state, action) => {
+      state.status = 'loaded';
+      if (action.payload) {
+        state.data = action.payload;
+      }
+    });
+    builder.addCase(getProducts.rejected, (state, action) => {
+      state.status = 'failed';
+      state.error = action.error.message;
+    });
   },
 });
 

@@ -1,28 +1,34 @@
 import { useParams } from 'react-router-dom';
-import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { getProducts, selectProducts } from '../store/Products/Products.slice';
-import { Product } from '../static/types';
 import { NavLink } from 'react-router-dom';
+import './style.css';
+import { useEffect } from 'react';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { getProducts } from '../../store/Products/Products.async.Actions';
+import { Product } from '../../static/types';
+import { Includes } from '../../static/types';
 
 const Productfunc = () => {
   const params = useParams<{ id: string }>();
-  console.log(params.id);
 
   const dispatch = useAppDispatch();
-  const products = useAppSelector(selectProducts);
+  const data = useAppSelector((state) => state.products.data);
+  // const status = useAppSelector((state) => state.products.status);
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
+  useEffect(() => {
+    console.log('Product data:', data);
+  }, [data]);
+
   const productId = Number(params.id);
 
-  const filteredProducts = products.filter(
+  const filteredProducts = data.filter(
     (product: Product) => product.id === productId,
   );
   return (
-    <div className="earphones">
+    <div className="product">
       {filteredProducts.map((product: Product) => (
         <div key={product.id} className="product-container container">
           <div className="img-container">
@@ -40,6 +46,14 @@ const Productfunc = () => {
             >
               add to cart
             </NavLink>
+          </div>
+          <div className="">
+            <div className="features">{product.features}</div>
+            <div className="inTheBox">
+              {product.includes.map((includes: Includes) => (
+                <div key={product.id}>{includes.item}</div>
+              ))}
+            </div>
           </div>
         </div>
       ))}

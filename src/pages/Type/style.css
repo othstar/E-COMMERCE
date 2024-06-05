@@ -1,4 +1,4 @@
-.speakers {
+.type {
   background-color: #f1f1f1;
 }
 
@@ -8,32 +8,31 @@
 
 .main {
   display: flex;
-  flex-direction: column-reverse;
 }
 
-.speaker-container {
+.type-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.speaker-container img {
+.type-container img {
   max-width: 100%;
   height: auto;
 }
 
-.speaker-descr {
+.type-descr {
   width: 50%;
 }
 
-.speaker-descr span {
+.type-descr span {
   color: #d87d4a;
 }
-.speaker-descr h3 {
+.type-descr h3 {
   color: #101010;
 }
 
-.speaker-descr p {
+.type-descr p {
   color: gray;
 }
 
@@ -54,6 +53,6 @@
 }
 
 /* Style for the second speaker: picture on the right, description on the left */
-.container:nth-of-type(odd) .speaker-container {
+.container:nth-of-type(even) .type-container {
   flex-direction: row-reverse;
 }

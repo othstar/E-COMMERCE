@@ -1,7 +1,7 @@
 import './style.css';
 
 interface CategoriesProps {
-  categorieName: string;
+  categorieName: any;
 }
 
 const Categories = ({ categorieName }: CategoriesProps) => {

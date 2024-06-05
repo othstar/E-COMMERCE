@@ -2,10 +2,7 @@ import { NavLink } from 'react-router-dom';
 import './style.css';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import {
-  getProducts,
-  selectProducts,
-} from '../../store/Products/Products.slice';
+import { getProducts } from '../../store/Products/Products.async.Actions';
 import { Product } from '../../static/types';
 
 interface FilterCardProps {
@@ -15,13 +12,14 @@ interface FilterCardProps {
 
 const FilterCard = ({ productId, imageSrc }: FilterCardProps) => {
   const dispatch = useAppDispatch();
-  const products = useAppSelector(selectProducts);
+  const data = useAppSelector((state) => state.products.data);
+  // const status = useAppSelector((state) => state.products.status);
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
-  const filteredProduct = products.find(
+  const filteredProduct = data.find(
     (product: Product) => product.id === productId,
   );
 

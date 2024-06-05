@@ -1,25 +1,21 @@
+import ShowcaseImg from '/assets/product-xx99-mark-two-headphones/desktop/file.png';
+import { NavLink } from 'react-router-dom';
+import './style.css';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import {
-  getProducts,
-  selectProducts,
-} from '../../store/Products/Products.slice';
+import { getProducts } from '../../store/Products/Products.async.Actions';
 import { Product } from '../../static/types';
-import { NavLink } from 'react-router-dom';
-import ShowcaseImg from '../../assets/product-xx99-mark-two-headphones/desktop/file.png';
-import './style.css';
 
 const Showcase = () => {
   const dispatch = useAppDispatch();
-  const products = useAppSelector(selectProducts);
+  const data = useAppSelector((state) => state.products.data);
+  // const status = useAppSelector((state) => state.products.status);
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
-  const filteredProducts = products.filter(
-    (product: Product) => product.id === 4,
-  );
+  const filteredProducts = data.filter((product: Product) => product.id === 4);
 
   return (
     <div>

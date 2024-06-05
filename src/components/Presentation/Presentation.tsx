@@ -1,4 +1,4 @@
-import Image from '../../assets/shared/desktop/image-best-gear.jpg';
+import Image from '/assets/shared/desktop/image-best-gear.jpg';
 import './style.css';
 
 const Presentation = () => {
