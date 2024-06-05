@@ -5,7 +5,7 @@ import { getProducts } from './Products.async.Actions';
 type InitialState = {
   status: 'idle' | 'loading' | 'loaded' | 'failed';
   data: Product[];
-  error: undefined | string;
+  error: string | undefined;
 };
 
 const initialState: InitialState = {
@@ -25,7 +25,9 @@ const ProductsSlice = createSlice({
     builder.addCase(getProducts.fulfilled, (state, action) => {
       state.status = 'loaded';
       if (action.payload) {
-        state.data = action.payload;
+        state.data = Array.isArray(action.payload)
+          ? action.payload
+          : [action.payload];
       }
     });
     builder.addCase(getProducts.rejected, (state, action) => {

@@ -14,7 +14,8 @@ const Showcase = () => {
     dispatch(getProducts());
   }, [dispatch]);
 
-  const filteredProducts = data.filter((product: Product) => product.id === 4);
+  const filteredProducts = data.filter((product: Product) => product.id == 4);
+  console.log(filteredProducts);
 
   return (
     <div>
@@ -34,7 +35,6 @@ const Showcase = () => {
           <div className="showcase-logo"></div>
         </div>
       ))}
-      <div style={{ background: '#f1f1f1', marginTop: '30px' }}></div>
     </div>
   );
 };
