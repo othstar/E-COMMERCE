@@ -6,7 +6,7 @@ export const getProducts = createAsyncThunk(
   '/products/getProducts',
   async (_, ThunkApi) => {
     try {
-      const response = await getData.get<Product[]>(`/product/getProducts`);
+      const response = await getData.get<Product>('/products');
       return response.data;
     } catch (error) {
       if (error instanceof Error) {

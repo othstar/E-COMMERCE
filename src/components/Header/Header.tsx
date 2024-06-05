@@ -24,7 +24,7 @@ const Header = () => {
         </ul>
         <div className="cart">cart</div>
       </div>
-      <div className="underline"></div>
+      <div className="underline container"></div>
     </header>
   );
 };

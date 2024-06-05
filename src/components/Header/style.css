@@ -1,12 +1,12 @@
 header {
-  background-color: #101010;
+  background-color: #191919;
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .logo a {
@@ -45,8 +45,6 @@ header {
 }
 
 .underline {
-  width: 80%;
   height: 1px;
   background-color: #c1bfbf;
-  margin: 0 auto;
 }
