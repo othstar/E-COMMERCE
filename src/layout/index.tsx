@@ -1,11 +1,11 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Router from "../router";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import Router from '../router';
 
 const Layout = () => {
   return (
     <div className="layout-cotainer">
-      <div className="header-container" style={{position: 'sticky', top: 0}} >
+      <div className="header-container" style={{ position: 'sticky', top: 0 }}>
         <Header />
       </div>
       <div className="main-container">

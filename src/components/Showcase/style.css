@@ -2,6 +2,33 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 50px;
+  background-image: url('/assets/home/desktop/image-hero.jpg');
+  background-size: 130%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  height: calc(100vh - 200px);
+}
+
+.showcase-descr {
+  width: 40%;
+}
+
+.showcase-descr span {
+  color: #f1f1f1;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+}
+
+.showcase-descr h2 {
+  font-size: 58px;
+  line-height: 1;
+  color: #fafafa;
+  text-transform: uppercase;
+}
+
+.showcase-descr p {
+  color: #f1f1f1;
 }
 
 .navlink-button {
@@ -14,6 +41,7 @@
   border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 2rem;
 }
 
 .navlink-button:hover {

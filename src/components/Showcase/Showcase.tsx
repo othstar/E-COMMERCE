@@ -1,4 +1,3 @@
-import ShowcaseImg from '/assets/product-xx99-mark-two-headphones/desktop/file.png';
 import { NavLink } from 'react-router-dom';
 import './style.css';
 import { useEffect } from 'react';
@@ -22,7 +21,7 @@ const Showcase = () => {
       {filteredProducts.map((product: Product) => (
         <div key={product.id} className="showcase container">
           <div className="showcase-descr">
-            <span>new product</span>
+            {product.new ? <span> new product</span> : null}
             <h2>{product.name}</h2>
             <p>
               Experience natural, lifelike audio and exceptional build quality
@@ -32,13 +31,7 @@ const Showcase = () => {
               see product
             </NavLink>
           </div>
-          <div className="showcase-logo">
-            <img
-              src={ShowcaseImg}
-              alt={product.name}
-              style={{ height: 600, width: 600 }}
-            />
-          </div>
+          <div className="showcase-logo"></div>
         </div>
       ))}
       <div style={{ background: '#f1f1f1', marginTop: '30px' }}></div>
