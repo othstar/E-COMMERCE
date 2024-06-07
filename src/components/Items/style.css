@@ -1,97 +1,35 @@
+.items {
+  display: flex;
+  flex-direction: column;
+}
 .item-container {
-  height: 40%;
+  min-height: 500px;
   display: flex;
+  justify-content: flex-end;
   border: 1px solid transparent;
-  padding: 20px 150px 20px 20px;
+  padding: 60px 40px;
   margin-bottom: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
-
-.item-container:nth-child(even) {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
 .item-info {
-  width: 50%;
-  padding-left: 100px;
-  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 350px;
 }
 
-.item-info h3 {
-  margin: 0 0 10px;
-  font-size: 18px;
-  color: black;
+.prod-image {
+  position: absolute;
+  bottom: -20px;
+  left: 100px;
+  max-width: 410px;
+  z-index: 2;
 }
-
-.item-info p {
-  margin: 0 0 10px;
-  font-size: 14px;
-}
-
-.item-info a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: transparent;
-  color: #101010;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: 1px solid #101010;
-  border-radius: 4px;
-}
-
-.item-info a:hover {
-  background-color: #101010;
-  color: #f1f1f1;
-}
-
-.item-container:nth-child(1) .item-info a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #101010;
-  color: #f1f1f1;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-
-.item-container:nth-child(1) .item-info a:hover {
-  background-color: #f1f1f1;
-  color: #101010;
-}
-
-.item-container:nth-child(2) .item-info a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #f1f1f1;
-  color: #101010;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: 1px solid #101010;
-  border-radius: 4px;
-}
-
-.item-container:nth-child(2) .item-info a:hover {
-  background-color: #101010;
-  color: #f1f1f1;
-}
-
-.item-container:nth-child(3) .item-info a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #101010;
-  color: #f1f1f1;
-  text-decoration: none;
-  text-transform: uppercase;
-  border: 1px solid #101010;
-  border-radius: 4px;
-}
-
-.item-container:nth-child(3) .item-info a:hover {
-  background-color: #f1f1f1;
-  color: #101010;
+.circle-image {
+  position: absolute;
+  top: -20px;
+  left: -170px;
+  z-index: 1;
 }

@@ -1,11 +1,30 @@
 .filter-container {
-  width: 40%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid transparent;
+  background-color: rgb(233, 233, 233);
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  position: relative;
   border-radius: 8px;
+  padding-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.filter-container img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+  max-width: 123px;
+  z-index: 999;
+}
+
+.filter-descr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
 }
 
 .filter-container h3 {
@@ -19,7 +38,7 @@
   display: inline-block;
   margin-top: 10px;
   padding: 5px 10px;
-  background-color: #f1f1f1;
+
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s;
 }

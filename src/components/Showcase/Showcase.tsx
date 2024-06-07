@@ -15,7 +15,6 @@ const Showcase = () => {
   }, [dispatch]);
 
   const filteredProducts = data.filter((product: Product) => product.id == 4);
-  console.log(filteredProducts);
 
   return (
     <div>
@@ -28,7 +27,7 @@ const Showcase = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <NavLink to={`/product/${product.id}`} className="navlink-button">
+            <NavLink to={`/products/${product.id}`} className="navlink-button">
               see product
             </NavLink>
           </div>

@@ -12,7 +12,6 @@ import './style.css';
 
 const Type = () => {
   const params = useParams<{ type: string }>();
-  console.log(params.type);
 
   const dispatch = useAppDispatch();
   const data = useAppSelector((state) => state.products.data);
@@ -38,14 +37,14 @@ const Type = () => {
         <div key={product.id} className="main container">
           <div className="type-container">
             <div className="type-image">
-              <img src={product.image.mobile} alt={product.name} />
+              <img src={product.image.desktop} alt={product.name} />
             </div>
             <div className="type-descr">
               {product.new ? <span>new product</span> : null}
               <h3>{product.name}</h3>
               <p>{product.description}</p>
               <NavLink
-                to={`/${product.category}/${product.id}`}
+                to={`/products/${product.id}`}
                 className="see-product-button"
               >
                 see Product
