@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 .item-container {
-  min-height: 500px;
+  height: 500px;
   display: flex;
   justify-content: flex-end;
   border: 1px solid transparent;
@@ -13,11 +13,76 @@
   position: relative;
   overflow: hidden;
 }
+
+.item-container-sec {
+  height: 170px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  border: 1px solid transparent;
+  padding: 60px 40px;
+  margin-bottom: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.item-container-third {
+  height: 170px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid transparent;
+  padding: 60px 0;
+  margin-bottom: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
 .item-info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 350px;
+  justify-content: space-between;
+  width: 40%;
+  z-index: 999;
+}
+
+.item-info-sec {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+  padding-left: 3rem;
+  z-index: 999;
+}
+
+.item-info-third {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  padding-left: 3rem;
+  padding-top: 6rem;
+  z-index: 999;
+  background-color: rgb(230, 229, 229);
+  height: 290px;
+}
+
+.item-info h3 {
+  text-transform: uppercase;
+  font-size: 56px;
+}
+
+.item-info-sec h3 {
+  text-transform: uppercase;
+  font-size: 24px;
+  color: #101010;
+}
+
+.item-info-third h3 {
+  text-transform: uppercase;
+  font-size: 24px;
+  color: #101010;
 }
 
 .prod-image {
@@ -27,9 +92,38 @@
   max-width: 410px;
   z-index: 2;
 }
+
+.prod-image-sec {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  z-index: 10;
+}
+
 .circle-image {
   position: absolute;
   top: -20px;
   left: -170px;
   z-index: 1;
+}
+
+.items .see-product-button {
+  display: inline-block;
+  width: 25%;
+  background-color: transparent;
+  color: #101010;
+  border: 1px solid #101010;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  margin-top: 3rem;
+}
+
+.items .see-product-button:hover {
+  background-color: #101010;
+  color: #f1f1f1;
 }
