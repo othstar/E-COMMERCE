@@ -1,0 +1,61 @@
+.product {
+  padding: 5rem 0;
+}
+
+.product-container {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+.img-container {
+  width: 60%;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.descr-container {
+  width: 40%;
+  padding: 2rem 0;
+}
+
+.descr-container h3 {
+  color: #101010;
+  font-size: 36px;
+}
+
+.descr-container p {
+  color: rgb(195, 194, 194);
+}
+
+.descr-container span {
+  color: black;
+}
+
+.features {
+  display: flex;
+  gap: 5rem;
+}
+
+.features h3 {
+  color: #101010;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.features-container {
+  width: 60%;
+}
+
+.features-container p {
+  color: rgb(195, 194, 194);
+  font-size: 14px;
+}
+
+.inTheBox span {
+  color: rgb(195, 194, 194);
+  font-size: 14px;
+  margin: 0.5rem;
+}
