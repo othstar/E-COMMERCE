@@ -1,12 +1,13 @@
 import { useParams } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+
 import './style.css';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getProducts } from '../../store/Products/Products.async.Actions';
-import { Product } from '../../static/types';
+import { OtherProduct, Product } from '../../static/types';
 import { Includes } from '../../static/types';
 import Filter from '../../components/Filter';
+import Button from '../../components/Button';
 
 const Productfunc = () => {
   const params = useParams();
@@ -41,12 +42,13 @@ const Productfunc = () => {
                 <h3>{product.name}</h3>
                 <p>{product.description}</p>
                 <span>{product.price}$</span>
-                <NavLink
-                  to={`/products/${product.id}`}
-                  className="see-product-button"
+                <Button
+                  isLink={false}
+                  dir={`/products/${product.id}`}
+                  type={'primary'}
                 >
                   add to cart
-                </NavLink>
+                </Button>
               </div>
             </div>
             <div className="features">
@@ -67,6 +69,52 @@ const Productfunc = () => {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className="images-showcase">
+              <div className="left-images">
+                <img
+                  src={`http://localhost:3001/assets/product-${product.slug}/desktop/image-gallery-1.jpg`}
+                  alt={product.slug}
+                />
+                <img
+                  src={`http://localhost:3001/assets/product-${product.slug}/desktop/image-gallery-2.jpg`}
+                  alt={product.slug}
+                />
+              </div>
+              <div className="right-image">
+                <img
+                  src={`http://localhost:3001/assets/product-${product.slug}/desktop/image-gallery-3.jpg`}
+                  alt={product.slug}
+                />
+              </div>
+            </div>
+            <div className="others">
+              {product.others.map((other: OtherProduct, index) => {
+                const matchingProduct = data.find(
+                  (p: Product) => p.slug === other.slug,
+                );
+                return (
+                  <div
+                    key={`${product.id}-${index}`}
+                    className="others-container"
+                  >
+                    <h3>{other.name}</h3>
+                    {matchingProduct && (
+                      <Button
+                        isLink={true}
+                        dir={`/products/${product.id}`}
+                        type={'primary'}
+                      >
+                        see product
+                      </Button>
+                    )}
+                    <img
+                      src={`http://localhost:3001/assets/shared/desktop/image-${other.slug}.jpg`}
+                      alt={other.name}
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         ))}

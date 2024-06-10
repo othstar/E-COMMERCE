@@ -1,3 +1,12 @@
+import { ReactNode } from 'react';
+
+export type ButtonText = {
+  children: ReactNode;
+  isLink: boolean;
+  dir: string;
+  type: 'primary' | 'secondary' | 'link';
+};
+
 export type Image = {
   mobile: string;
   tablet: string;

@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
 import './style.css';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
@@ -9,6 +8,7 @@ import Categories from '../../components/Categories';
 import Filter from '../../components/Filter';
 import Presentation from '../../components/Presentation';
 import './style.css';
+import Button from '../../components/Button';
 
 const Type = () => {
   const params = useParams<{ type: string }>();
@@ -43,12 +43,13 @@ const Type = () => {
               {product.new ? <span>new product</span> : null}
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-              <NavLink
-                to={`/products/${product.id}`}
-                className="see-product-button"
+              <Button
+                isLink={true}
+                dir={`/products/${product.id}`}
+                type={'primary'}
               >
-                see Product
-              </NavLink>
+                see product
+              </Button>
             </div>
           </div>
         </div>

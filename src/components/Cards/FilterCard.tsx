@@ -1,9 +1,9 @@
-import { NavLink } from 'react-router-dom';
 import './style.css';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getProducts } from '../../store/Products/Products.async.Actions';
 import { Product } from '../../static/types';
+import Button from '../Button';
 
 interface FilterCardProps {
   productId: number;
@@ -30,12 +30,22 @@ const FilterCard = ({ productId, imageSrc }: FilterCardProps) => {
           <img src={imageSrc} alt={filteredProduct.name} />
           <div className="filter-descr">
             <h3>{filteredProduct.category}</h3>
-            <NavLink
-              to={`/${filteredProduct.category}`}
-              className="filter-navlink"
+            <Button
+              isLink={true}
+              dir={`/${filteredProduct.category}`}
+              type={'link'}
             >
-              shop
-            </NavLink>
+              shop{' '}
+              <svg width="8" height="12" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M1.322 1l5 5-5 5"
+                  stroke="#D87D4A"
+                  stroke-width="2"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
+            </Button>
           </div>
         </div>
       )}

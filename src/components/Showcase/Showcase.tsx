@@ -1,9 +1,9 @@
-import { NavLink } from 'react-router-dom';
 import './style.css';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getProducts } from '../../store/Products/Products.async.Actions';
 import { Product } from '../../static/types';
+import Button from '../Button';
 
 const Showcase = () => {
   const dispatch = useAppDispatch();
@@ -27,9 +27,14 @@ const Showcase = () => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <NavLink to={`/products/${product.id}`} className="navlink-button">
+
+            <Button
+              isLink={true}
+              dir={`/products/${product.id}`}
+              type={'primary'}
+            >
               see product
-            </NavLink>
+            </Button>
           </div>
           <div className="showcase-logo"></div>
         </div>

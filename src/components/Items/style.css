@@ -106,24 +106,3 @@
   left: -170px;
   z-index: 1;
 }
-
-.items .see-product-button {
-  display: inline-block;
-  width: 25%;
-  background-color: transparent;
-  color: #101010;
-  border: 1px solid #101010;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  font-size: 14px;
-  transition: background-color 0.3s, color 0.3s;
-  cursor: pointer;
-  margin-top: 3rem;
-}
-
-.items .see-product-button:hover {
-  background-color: #101010;
-  color: #f1f1f1;
-}

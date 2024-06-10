@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getProducts } from '../../store/Products/Products.async.Actions';
@@ -8,6 +7,7 @@ import zx9 from '/assets/home/desktop/image-speaker-zx9.png';
 import zx7 from '/assets/home/desktop/image-speaker-zx7.jpg';
 import yx1 from '/assets/home/desktop/image-earphones-yx1.jpg';
 import Circle from '/assets/home/desktop/pattern-circles.svg';
+import Button from '../Button';
 
 const Items = () => {
   const dispatch = useAppDispatch();
@@ -43,12 +43,13 @@ const Items = () => {
           <div className="item-info">
             <h3>{product.name}</h3>
             <p>{product.description}</p>
-            <NavLink
-              to={`/products/${product.id}`}
-              className="see-product-button"
+            <Button
+              isLink={true}
+              dir={`/products/${product.id}`}
+              type={'secondary'}
             >
-              See Product
-            </NavLink>
+              see product
+            </Button>
           </div>
         </div>
       ))}
@@ -61,12 +62,13 @@ const Items = () => {
           <img className="prod-image-sec" src={zx7} alt="image" />
           <div className="item-info-sec">
             <h3>{product.name}</h3>
-            <NavLink
-              to={`/products/${product.id}`}
-              className="see-product-button"
+            <Button
+              isLink={true}
+              dir={`/products/${product.id}`}
+              type={'secondary'}
             >
-              See Product
-            </NavLink>
+              see product
+            </Button>
           </div>
         </div>
       ))}
@@ -77,12 +79,13 @@ const Items = () => {
           </div>
           <div className="item-info-third">
             <h3>{product.name}</h3>
-            <NavLink
-              to={`/products/${product.id}`}
-              className="see-product-button"
+            <Button
+              isLink={true}
+              dir={`/products/${product.id}`}
+              type={'secondary'}
             >
-              See Product
-            </NavLink>
+              see product
+            </Button>
           </div>
         </div>
       ))}
