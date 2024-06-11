@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getProducts } from '../../store/Products/Products.async.Actions';
 import { Product } from '../../static/types';
-import Button from '../Button';
+import Button from '../UI/Button';
 
 interface FilterCardProps {
   productId: number;

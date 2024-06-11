@@ -1,10 +1,18 @@
 import { ReactNode } from 'react';
 
-export type ButtonText = {
+export type ButtonProps = {
   children: ReactNode;
   isLink: boolean;
   dir: string;
   type: 'primary' | 'secondary' | 'link';
+};
+
+export type InputProps = {
+  id?: string;
+  type: string;
+  isError?: boolean;
+  placeholder?: string;
+  label?: null | string;
 };
 
 export type Image = {

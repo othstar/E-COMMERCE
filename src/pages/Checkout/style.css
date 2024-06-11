@@ -1,0 +1,11 @@
+.checkout-body {
+  background-color: #f1f1f1;
+}
+.checkout-wrapper {
+  display: flex;
+  padding: 10rem 0;
+}
+
+.summary-container h3 {
+  color: black;
+}

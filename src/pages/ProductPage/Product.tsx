@@ -7,7 +7,7 @@ import { getProducts } from '../../store/Products/Products.async.Actions';
 import { OtherProduct, Product } from '../../static/types';
 import { Includes } from '../../static/types';
 import Filter from '../../components/Filter';
-import Button from '../../components/Button';
+import Button from '../../components/UI/Button';
 
 const Productfunc = () => {
   const params = useParams();

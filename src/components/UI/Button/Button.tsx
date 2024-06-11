@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { ButtonText } from '../../static/types';
+import { ButtonProps } from '../../static/types';
 import './style.css';
 
 const Button = ({
@@ -7,7 +7,7 @@ const Button = ({
   isLink = false,
   dir,
   type = 'primary',
-}: ButtonText) => {
+}: ButtonProps) => {
   if (isLink) {
     return (
       <NavLink to={dir} className={`btn btn-${type}`}>

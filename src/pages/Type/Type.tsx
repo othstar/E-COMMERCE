@@ -8,7 +8,7 @@ import Categories from '../../components/Categories';
 import Filter from '../../components/Filter';
 import Presentation from '../../components/Presentation';
 import './style.css';
-import Button from '../../components/Button';
+import Button from '../../components/UI/Button';
 
 const Type = () => {
   const params = useParams<{ type: string }>();

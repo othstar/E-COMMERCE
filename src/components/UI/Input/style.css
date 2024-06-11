@@ -1,0 +1,31 @@
+.input-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-wrapper label {
+  color: black;
+  font-family: bold;
+}
+
+.input {
+  border: 1px solid #cfcfcf;
+  border-radius: 8px;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 18px 24px;
+}
+
+.input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.input:focus {
+  outline: none;
+}
+
+.input-error {
+  color: #cd2c2c;
+  border: 2px solid #cd2c2c;
+}

@@ -7,7 +7,7 @@ import zx9 from '/assets/home/desktop/image-speaker-zx9.png';
 import zx7 from '/assets/home/desktop/image-speaker-zx7.jpg';
 import yx1 from '/assets/home/desktop/image-earphones-yx1.jpg';
 import Circle from '/assets/home/desktop/pattern-circles.svg';
-import Button from '../Button';
+import Button from '../UI/Button';
 
 const Items = () => {
   const dispatch = useAppDispatch();
