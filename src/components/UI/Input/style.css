@@ -2,11 +2,16 @@
   display: inline-flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding-top: 30px;
+  position: relative;
 }
 
 .input-wrapper label {
   color: black;
   font-family: bold;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .input {
@@ -25,7 +30,26 @@
   outline: none;
 }
 
-.input-error {
+.input-wrapper.error .input {
   color: #cd2c2c;
   border: 2px solid #cd2c2c;
+}
+
+.input-wrapper.error label {
+  color: #cd2c2c;
+}
+
+.input-wrapper.error .error-message {
+  color: #cd2c2c;
+  position: absolute;
+  top: -20px;
+  left: 170px;
+  font-size: 12px;
+}
+
+/* Radio Input Wrapper */
+
+.radio-input-wrapper {
+  display: inline-flex;
+  border: 1px solid #d87d4a;
 }

@@ -1,4 +1,3 @@
-import './style.css';
 import Filter from '../../components/Filter';
 import Showcase from '../../components/Showcase';
 import Items from '../../components/Items';

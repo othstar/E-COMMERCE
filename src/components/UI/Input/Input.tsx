@@ -6,26 +6,28 @@ const Input = ({
   id = '',
   type,
   isError = false,
+  errorMessage = '',
   placeholder,
   label = null,
 }: InputProps) => {
   if (type === 'radio') {
-    <div>
-      <input
-        type="radio"
-        id={id}
-        className={classNames({ 'input-error': isError })}
-      />
-      ;{label ? <label htmlFor={id}>{label}</label> : null}
-    </div>;
+    return (
+      <div
+        className={classNames({ 'radio-input-wrapper': true, error: isError })}
+      >
+        <input type="radio" id={id} className={classNames({})} />
+        {label ? <label htmlFor={id}>{label}</label> : null}
+      </div>
+    );
   }
   return (
-    <div className="input-wrapper">
+    <div className={classNames({ 'input-wrapper': true, error: isError })}>
       {/* <input className={`input ${isError ? 'input-error' : ''}`} type={type} />; */}
       {label ? <label htmlFor={id}>{label}</label> : null}
+      {isError ? <p className="error-message">{errorMessage}</p> : null}
       <input
         id={id}
-        className={classNames({ input: true, 'input-error': isError })}
+        className={classNames({ input: true })}
         type={type}
         placeholder={placeholder}
       />

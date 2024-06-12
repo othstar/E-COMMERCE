@@ -11,6 +11,7 @@ export type InputProps = {
   id?: string;
   type: string;
   isError?: boolean;
+  errorMessage?: string;
   placeholder?: string;
   label?: null | string;
 };

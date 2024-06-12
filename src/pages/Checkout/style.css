@@ -5,7 +5,13 @@
   display: flex;
   padding: 10rem 0;
 }
-
+.checkout-container {
+  display: flex;
+}
+.billing-form {
+  display: flex;
+  gap: 1rem;
+}
 .summary-container h3 {
   color: black;
 }
