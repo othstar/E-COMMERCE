@@ -8,6 +8,7 @@ const Input = ({
   isError = false,
   errorMessage = '',
   placeholder,
+  name = '',
   label = null,
 }: InputProps) => {
   if (type === 'radio') {
@@ -15,7 +16,7 @@ const Input = ({
       <div
         className={classNames({ 'radio-input-wrapper': true, error: isError })}
       >
-        <input type="radio" id={id} className={classNames({})} />
+        <input type="radio" name={name} id={id} className={classNames({})} />
         {label ? <label htmlFor={id}>{label}</label> : null}
       </div>
     );

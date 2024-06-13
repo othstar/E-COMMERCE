@@ -31,7 +31,6 @@ const Type = () => {
       <div className="categorie">
         <Categories categorieName={category} />
       </div>
-      <Filter />
 
       {filteredProduct.map((product: Product) => (
         <div key={product.id} className="main container">
@@ -54,6 +53,7 @@ const Type = () => {
           </div>
         </div>
       ))}
+      <Filter />
       <Presentation />
     </div>
   );

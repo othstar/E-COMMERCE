@@ -1,0 +1,29 @@
+.number-input-wrapper {
+  display: flex;
+}
+
+.number-input-wrapper button,
+.number-input-wrapper span {
+  width: 40px;
+  height: 48px;
+  background-color: #f1f1f1;
+  font-size: 13px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.number-input-wrapper button {
+  color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  border: none;
+}
+
+.number-input-wrapper button:hover {
+  color: #d87d4a;
+}
+
+.number-input-wrapper span {
+  color: black;
+}

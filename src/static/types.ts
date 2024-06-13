@@ -13,6 +13,7 @@ export type InputProps = {
   isError?: boolean;
   errorMessage?: string;
   placeholder?: string;
+  name?: string;
   label?: null | string;
 };
 

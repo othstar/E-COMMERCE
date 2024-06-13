@@ -4,14 +4,51 @@
 .checkout-wrapper {
   display: flex;
   padding: 10rem 0;
+  background-color: white;
 }
 .checkout-container {
   display: flex;
+  padding: 0 3rem;
 }
 .billing-form {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+.input-2 {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+
+.payment-radio {
   display: flex;
+  gap: 19rem;
+}
+
+.radio-div {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.e-money {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto auto;
   gap: 1rem;
 }
+
+.summary-container {
+  width: 30%;
+}
+
 .summary-container h3 {
   color: black;
 }

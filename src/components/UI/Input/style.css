@@ -21,6 +21,7 @@
   font-size: 14px;
   font-weight: bold;
   padding: 18px 24px;
+  width: 300px;
 }
 
 .input::placeholder {
@@ -52,4 +53,21 @@
 .radio-input-wrapper {
   display: inline-flex;
   border: 1px solid #d87d4a;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+  padding: 18px 24px;
+  width: 240px;
+}
+.radio-input-wrapper label {
+  color: black;
+  padding-left: 1rem;
+}
+
+.radio-input-wrapper input {
+  accent-color: #d87d4a;
+  align-content: center;
+  width: 20px;
+  height: 20px;
 }
