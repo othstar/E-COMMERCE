@@ -75,24 +75,33 @@ const Header = () => {
               <div className="cart-container">
                 {cartState.map((items) => (
                   <div className="items-container">
-                    <div className="img-container">
-                      <img
-                        src={`http://localhost:3001/assets/product-${items.item.slug}/desktop/image-product.jpg`}
-                        alt={items.item.name}
-                      />
+                    <div className="left-container">
+                      <div className="img-container">
+                        <img
+                          src={`http://localhost:3001/assets/product-${items.item.slug}/desktop/image-product.jpg`}
+                          alt={items.item.name}
+                        />
+                      </div>
+                      <div className="items-info">
+                        <h3>{items.item.name}</h3>
+                        <span className="items-price">{items.item.price}$</span>
+                      </div>
                     </div>
                     <div className="descr-container">
-                      <h3>{items.item.name}</h3>
-                      <span className="items-price">{items.item.price}$</span>
                       <div className="items-buy">
                         {items.item && (
-                          <NumberInput
-                            number={getProductCurrNumber(cartState, items.item)}
-                            setNumber={(num: number) =>
-                              updateCart(num, items.item)
-                            }
-                            maxQuantity={50}
-                          />
+                          <div className="number-input-container">
+                            <NumberInput
+                              number={getProductCurrNumber(
+                                cartState,
+                                items.item,
+                              )}
+                              setNumber={(num: number) =>
+                                updateCart(num, items.item)
+                              }
+                              maxQuantity={50}
+                            />
+                          </div>
                         )}
                       </div>
                     </div>

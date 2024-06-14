@@ -11,7 +11,7 @@ import NumberInput from '../../components/UI/NumberInput';
 import Presentation from '../../components/Presentation';
 import { CartContext } from '../../context/CartContext';
 
-export const getProductCurrNumber = (cartState, product) => {
+export const getProductCurrNumber = (cartState: any, product: any) => {
   const prod = cartState.find((p) => p.item.id === product?.id);
   if (prod) {
     return prod.amount;
