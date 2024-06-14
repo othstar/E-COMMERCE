@@ -1,5 +1,24 @@
 import { ReactNode } from 'react';
 
+export type CartItem = {
+  amount: number;
+  item: Product;
+};
+export type CartContexts = {
+  cartState: CartItem[];
+  setCartState: React.Dispatch<React.SetStateAction<CartItem[]>>;
+  updateCart: (num: number, prodd: Product) => void;
+};
+
+export type CartContextProps = {
+  children: ReactNode;
+};
+
+export type NumberInputProps = {
+  number: number;
+  setNumber: (num: number) => void;
+  maxQuantity?: number;
+};
 export type ButtonProps = {
   children: ReactNode;
   isLink: boolean;

@@ -1,16 +1,22 @@
 import './style.css';
+import { NumberInputProps } from '../../../static/types';
 
-type Props = {
-  number: number;
-  setNumber: React.Dispatch<React.SetStateAction<number>>;
-};
-
-const NumberInput = ({ number, setNumber }: Props) => {
+const NumberInput = ({
+  number,
+  setNumber,
+  maxQuantity = 100,
+}: NumberInputProps) => {
   return (
     <div className="number-input-wrapper">
-      <button onClick={() => setNumber(number - 1)}>-</button>
+      <button onClick={() => setNumber(number === 0 ? number : number - 1)}>
+        -
+      </button>
       <span>{number}</span>
-      <button onClick={() => setNumber(number + 1)}>+</button>
+      <button
+        onClick={() => setNumber(number === maxQuantity ? number : number + 1)}
+      >
+        +
+      </button>
     </div>
   );
 };

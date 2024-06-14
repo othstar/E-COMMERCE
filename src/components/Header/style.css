@@ -59,6 +59,12 @@ header {
   max-height: 100%;
   border-radius: 8px;
   padding: 48px;
+  overflow: auto;
+}
+
+.items-container .img-container img {
+  width: 80px;
+  height: 80px;
 }
 
 .underline {

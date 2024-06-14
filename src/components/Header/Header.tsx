@@ -1,12 +1,16 @@
 import { NavLink } from 'react-router-dom';
 import './style.css';
 import Modal from 'react-modal';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { CartContext } from '../../context/CartContext';
+import { CartContexts } from '../../static/types';
+import NumberInput from '../UI/NumberInput';
+import { getProductCurrNumber } from '../../pages/ProductPage/Product';
 
 const Header = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
+  const { cartState, updateCart } = useContext(CartContext) as CartContexts;
+  // const navigate = useNavigate();
 
   const openModal = () => {
     setIsOpen(true);
@@ -67,18 +71,34 @@ const Header = () => {
               isOpen={modalIsOpen}
               contentLabel="Example Modal"
             >
-              {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2> */}
-              <div>I am a modal</div>
-              <form>
-                <input />
-                <button>tab navigation</button>
-                <button>stays</button>
-                <button>inside</button>
-                <button>the modal</button>
-              </form>
-              <button onClick={() => (closeModal(), navigate('/checkout'))}>
-                CHECKOUT
-              </button>
+              {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2> */}{' '}
+              <div className="cart-container">
+                {cartState.map((items) => (
+                  <div className="items-container">
+                    <div className="img-container">
+                      <img
+                        src={`http://localhost:3001/assets/product-${items.item.slug}/desktop/image-product.jpg`}
+                        alt={items.item.name}
+                      />
+                    </div>
+                    <div className="descr-container">
+                      <h3>{items.item.name}</h3>
+                      <span className="items-price">{items.item.price}$</span>
+                      <div className="items-buy">
+                        {items.item && (
+                          <NumberInput
+                            number={getProductCurrNumber(cartState, items.item)}
+                            setNumber={(num: number) =>
+                              updateCart(num, items.item)
+                            }
+                            maxQuantity={50}
+                          />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </Modal>
           </div>
         </div>
