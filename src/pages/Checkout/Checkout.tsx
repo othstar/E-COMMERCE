@@ -1,11 +1,8 @@
 import './style.css';
 import Input from '../../components/UI/Input';
-import NumberInput from '../../components/UI/NumberInput';
-import { useState } from 'react';
 import ModalUI from '../../components/UI/Modal';
 
 const Checkout = () => {
-  const [num, setNum] = useState(2);
   return (
     <div className="checkout-body ">
       <div className="checkout-wrapper container ">
@@ -90,9 +87,7 @@ const Checkout = () => {
           </div>
           <ModalUI />
         </div>
-        <div className="summary-container">
-          <NumberInput number={num} setNumber={setNum} />
-        </div>
+        <div className="summary-container"></div>
       </div>
     </div>
   );

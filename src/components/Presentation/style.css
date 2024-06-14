@@ -20,5 +20,10 @@
 }
 
 .description p {
-  color: gray;
+  color: #a6a5a5;
+  font-size: 15px;
+}
+
+.logo-container {
+  margin-bottom: 2rem;
 }

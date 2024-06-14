@@ -18,7 +18,7 @@ const Presentation = () => {
         </p>
       </div>
       <div className="logo-container">
-        <img src={Image} alt="photo" />
+        <img src={Image} alt="photo" style={{ borderRadius: '8px' }} />
       </div>
     </div>
   );

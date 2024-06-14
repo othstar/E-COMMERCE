@@ -32,27 +32,29 @@ const Type = () => {
         <Categories categorieName={category} />
       </div>
 
-      {filteredProduct.map((product: Product) => (
-        <div key={product.id} className="main container">
-          <div className="type-container">
-            <div className="type-image">
-              <img src={product.image.desktop} alt={product.name} />
-            </div>
-            <div className="type-descr">
-              {product.new ? <span>new product</span> : null}
-              <h3>{product.name}</h3>
-              <p>{product.description}</p>
-              <Button
-                isLink={true}
-                dir={`/products/${product.id}`}
-                type={'primary'}
-              >
-                see product
-              </Button>
+      <div className="main">
+        {filteredProduct.map((product: Product) => (
+          <div key={product.id} className="container">
+            <div className="type-container">
+              <div className="type-image">
+                <img src={product.image.desktop} alt={product.name} />
+              </div>
+              <div className="type-descr">
+                {product.new ? <span>new product</span> : null}
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <Button
+                  isLink={true}
+                  dir={`/products/${product.id}`}
+                  type={'primary'}
+                >
+                  see product
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
       <Filter />
       <Presentation />
     </div>

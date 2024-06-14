@@ -1,5 +1,5 @@
 .type {
-  background-color: #f1f1f1;
+  background-color: #fafafa;
 }
 
 .categorie {
@@ -8,32 +8,48 @@
 
 .main {
   display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
 }
 
 .type-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10rem;
+}
+
+.container:nth-child(even) .type-container {
+  flex-direction: row-reverse;
 }
 
 .type-container img {
-  max-width: 100%;
-  height: auto;
+  width: 550px;
+  height: 550px;
 }
 
 .type-descr {
-  width: 50%;
+  width: 40%;
 }
 
 .type-descr span {
   color: #d87d4a;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
 }
+
 .type-descr h3 {
   color: #101010;
+  font-size: 36px;
+  font-weight: bold;
+  max-width: 220px;
 }
 
 .type-descr p {
-  color: gray;
+  color: #a6a5a5;
+  font-size: 15px;
+  padding-bottom: 1rem;
 }
 
 .type-descr .navlink-button {
