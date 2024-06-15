@@ -21,9 +21,10 @@ export type NumberInputProps = {
 };
 export type ButtonProps = {
   children: ReactNode;
-  isLink: boolean;
-  dir: string;
+  isLink?: boolean;
+  dir?: string;
   type: 'primary' | 'secondary' | 'link';
+  onClick?: () => void;
 };
 
 export type InputProps = {

@@ -48,6 +48,20 @@ header {
   font-size: 18px;
 }
 
+.cart button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.cart button svg path {
+  transition: fill 0.3s ease;
+}
+
+.cart button:hover svg path {
+  fill: #d87d4a;
+}
+
 .cart-modal {
   position: absolute;
   right: 350px;
@@ -116,6 +130,32 @@ header {
 .items-buy {
   display: flex;
   align-items: center;
+}
+
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 !important;
+}
+
+.checkout-container a {
+  text-align: center;
+}
+
+.total-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-price .total {
+  color: #a6a5a5;
+  text-transform: uppercase;
+}
+
+.total-price .tot-price {
+  color: black;
+  font-weight: bold;
 }
 
 .underline {

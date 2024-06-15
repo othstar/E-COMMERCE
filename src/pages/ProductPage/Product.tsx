@@ -1,9 +1,14 @@
 import { useParams } from 'react-router-dom';
 import './style.css';
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getProducts } from '../../store/Products/Products.async.Actions';
-import { CartContexts, OtherProduct, Product } from '../../static/types';
+import {
+  CartContexts,
+  CartItem,
+  OtherProduct,
+  Product,
+} from '../../static/types';
 import { Includes } from '../../static/types';
 import Filter from '../../components/Filter';
 import Button from '../../components/UI/Button';
@@ -11,29 +16,39 @@ import NumberInput from '../../components/UI/NumberInput';
 import Presentation from '../../components/Presentation';
 import { CartContext } from '../../context/CartContext';
 
-export const getProductCurrNumber = (cartState: any, product: any) => {
+export const getProductCurrNumber = (
+  cartState: CartItem[],
+  product: Product,
+) => {
   const prod = cartState.find((p) => p.item.id === product?.id);
   if (prod) {
     return prod.amount;
   }
-  return 0;
+  return 1;
 };
 
 const Productfunc = () => {
   const params = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
   const products = useAppSelector((state) => state.products.data);
-  // const [num, setNum] = useState(1);
   const { cartState, updateCart } = useContext(CartContext) as CartContexts;
-  console.log(cartState);
+  const [num, setNum] = useState(1);
+
+  // Destructure the id from params
+  const { id } = params;
+
+  // Find the product after we have the id
+  const product = products.find((p: Product) => p.id.toString() === id);
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
-  const { id } = params;
-
-  const product = products.find((p: Product) => p.id.toString() === id);
+  useEffect(() => {
+    if (product) {
+      setNum(getProductCurrNumber(cartState, product));
+    }
+  }, [product, setNum, cartState]);
 
   if (!product) {
     return <div>Loading...</div>;
@@ -58,16 +73,8 @@ const Productfunc = () => {
               <p>{product.description}</p>
               <span className="product-price">{product.price}$</span>
               <div className="product-buy">
-                <NumberInput
-                  number={getProductCurrNumber(cartState, product)}
-                  setNumber={(num: number) => updateCart(num, product)}
-                  maxQuantity={50}
-                />
-                <Button
-                  isLink={false}
-                  dir={`/products/${product.id}`}
-                  type="primary"
-                >
+                <NumberInput number={num} setNumber={setNum} maxQuantity={50} />
+                <Button onClick={() => updateCart(num, product)} type="primary">
                   add to cart
                 </Button>
               </div>

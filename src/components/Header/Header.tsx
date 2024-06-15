@@ -6,11 +6,11 @@ import { CartContext } from '../../context/CartContext';
 import { CartContexts } from '../../static/types';
 import NumberInput from '../UI/NumberInput';
 import { getProductCurrNumber } from '../../pages/ProductPage/Product';
+import Button from '../UI/Button';
 
 const Header = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const { cartState, updateCart } = useContext(CartContext) as CartContexts;
-  // const navigate = useNavigate();
 
   const openModal = () => {
     setIsOpen(true);
@@ -20,10 +20,16 @@ const Header = () => {
     setIsOpen(false);
   };
 
-  //   const afterOpenModal = () => {
-  //     // references are now sync'd and can be accessed.
-  //     subtitle.style.color = '#f00';
-  //   };
+  const calculateTotalPrice = () => {
+    return cartState.reduce((total, items) => {
+      const itemTotal =
+        items.item.price * getProductCurrNumber(cartState, items.item);
+      return total + itemTotal;
+    }, 0);
+  };
+
+  const totalPrice = calculateTotalPrice();
+
   return (
     <header>
       <div className="navbar container">
@@ -58,7 +64,7 @@ const Header = () => {
                 <path
                   d="M8.625 15.833c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.054-.935-2.054-2.083 0-1.15.922-2.084 2.054-2.084zm9.857 0c1.132 0 2.054.935 2.054 2.084 0 1.148-.922 2.083-2.054 2.083-1.132 0-2.053-.935-2.053-2.083 0-1.15.92-2.084 2.053-2.084zm-9.857 1.39a.69.69 0 00-.685.694.69.69 0 00.685.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zm9.857 0a.69.69 0 00-.684.694.69.69 0 00.684.694.69.69 0 00.685-.694.69.69 0 00-.685-.695zM4.717 0c.316 0 .59.215.658.517l.481 2.122h16.47a.68.68 0 01.538.262c.127.166.168.38.11.579l-2.695 9.236a.672.672 0 01-.648.478H7.41a.667.667 0 00-.673.66c0 .364.303.66.674.66h12.219c.372 0 .674.295.674.66 0 .364-.302.66-.674.66H7.412c-1.115 0-2.021-.889-2.021-1.98 0-.812.502-1.511 1.218-1.816L4.176 1.32H.674A.667.667 0 010 .66C0 .296.302 0 .674 0zm16.716 3.958H6.156l1.797 7.917h11.17l2.31-7.917z"
                   fill="#FFF"
-                  fill-rule="nonzero"
+                  fillRule="nonzero"
                 />
               </svg>
             </button>
@@ -71,10 +77,9 @@ const Header = () => {
               isOpen={modalIsOpen}
               contentLabel="Example Modal"
             >
-              {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2> */}{' '}
               <div className="cart-container">
                 {cartState.map((items) => (
-                  <div className="items-container">
+                  <div key={items.item.id} className="items-container">
                     <div className="left-container">
                       <div className="img-container">
                         <img
@@ -90,7 +95,10 @@ const Header = () => {
                     <div className="descr-container">
                       <div className="items-buy">
                         {items.item && (
-                          <div className="number-input-container">
+                          <div
+                            key={items.item.id}
+                            className="number-input-container"
+                          >
                             <NumberInput
                               number={getProductCurrNumber(
                                 cartState,
@@ -107,6 +115,20 @@ const Header = () => {
                     </div>
                   </div>
                 ))}
+                <div className="checkout-container">
+                  <div className="total-price">
+                    <span className="total">Total</span>
+                    <span className="tot-price">{`$ ${totalPrice}`}</span>
+                  </div>
+                  <Button
+                    isLink={true}
+                    dir={'/checkout'}
+                    type={'primary'}
+                    onClick={closeModal}
+                  >
+                    checkout
+                  </Button>
+                </div>
               </div>
             </Modal>
           </div>
