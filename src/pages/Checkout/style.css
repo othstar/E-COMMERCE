@@ -3,8 +3,15 @@
 }
 .checkout-wrapper {
   display: flex;
-  padding: 10rem 0;
+  gap: 2rem;
+}
+
+.checkout-left {
+  display: flex;
+  margin: 12rem 0;
+  padding: 1rem;
   background-color: white;
+  width: 70%;
 }
 .checkout-container {
   display: flex;
@@ -23,12 +30,16 @@
   grid-template-columns: 1fr 3fr;
   grid-template-rows: auto auto;
   gap: 1rem;
-  margin-bottom: 5rem;
+  margin: 1rem 0 5rem 0;
 }
 
 .payment-radio {
   display: flex;
-  gap: 19rem;
+  gap: 15rem;
+}
+
+.method h4 {
+  color: #a6a5a5;
 }
 
 .radio-div {
@@ -46,7 +57,58 @@
 }
 
 .summary-container {
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 40%;
+  background-color: white;
+  padding: 0 1rem 1rem 1rem;
+  margin: 12rem 0;
+}
+
+.summary-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.summary-item .summary-item-details {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 210px;
+}
+
+.summary-item .summary-item-details .summary-item-image {
+  width: 107px;
+}
+
+.summary-item .summary-item-details .summary-item-image img {
+  width: 80px;
+  height: 80px;
+}
+
+.summary-item .summary-item-details .summary-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-right: 5rem;
+}
+
+.summary-item .summary-item-details .summary-item-text h3 {
+  font-size: 15px;
+  color: black;
+}
+
+.summary-item .summary-item-details .summary-item-text span {
+  font-size: 14px;
+  color: #a6a5a5;
+}
+
+.summary-item .summary-item-details .quantity span {
+  color: #a6a5a5;
+  font-size: 14px;
 }
 
 .summary-container h3 {
