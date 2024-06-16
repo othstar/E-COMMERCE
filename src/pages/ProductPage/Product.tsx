@@ -1,20 +1,15 @@
 import { useParams } from 'react-router-dom';
 import './style.css';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getProducts } from '../../store/Products/Products.async.Actions';
-import {
-  CartContexts,
-  CartItem,
-  OtherProduct,
-  Product,
-} from '../../static/types';
+import { CartItem, OtherProduct, Product } from '../../static/types';
 import { Includes } from '../../static/types';
 import Filter from '../../components/Filter';
 import Button from '../../components/UI/Button';
 import NumberInput from '../../components/UI/NumberInput';
 import Presentation from '../../components/Presentation';
-import { CartContext } from '../../context/CartContext';
+import { updateCart } from '../../store/Cart/Cart.slice';
 
 export const getProductCurrNumber = (
   cartState: CartItem[],
@@ -31,24 +26,21 @@ const Productfunc = () => {
   const params = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
   const products = useAppSelector((state) => state.products.data);
-  const { cartState, updateCart } = useContext(CartContext) as CartContexts;
   const [num, setNum] = useState(1);
 
-  // Destructure the id from params
   const { id } = params;
 
-  // Find the product after we have the id
   const product = products.find((p: Product) => p.id.toString() === id);
+  const cart = useAppSelector((state) => state.cart.value);
 
   useEffect(() => {
     dispatch(getProducts());
   }, [dispatch]);
 
   useEffect(() => {
-    if (product) {
-      setNum(getProductCurrNumber(cartState, product));
-    }
-  }, [product, setNum, cartState]);
+    if (!product) return;
+    setNum(getProductCurrNumber(cart, product));
+  }, [product, setNum, cart]);
 
   if (!product) {
     return <div>Loading...</div>;
@@ -74,7 +66,10 @@ const Productfunc = () => {
               <span className="product-price">{product.price}$</span>
               <div className="product-buy">
                 <NumberInput number={num} setNumber={setNum} maxQuantity={50} />
-                <Button onClick={() => updateCart(num, product)} type="primary">
+                <Button
+                  onClick={() => dispatch(updateCart({ num, product }))}
+                  type="primary"
+                >
                   add to cart
                 </Button>
               </div>

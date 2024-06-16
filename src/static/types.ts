@@ -8,6 +8,7 @@ export type CartContexts = {
   cartState: CartItem[];
   setCartState: React.Dispatch<React.SetStateAction<CartItem[]>>;
   updateCart: (num: number, prodd: Product) => void;
+  clearCart: () => void;
 };
 
 export type CartContextProps = {
