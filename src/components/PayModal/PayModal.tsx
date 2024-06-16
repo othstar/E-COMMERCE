@@ -23,28 +23,42 @@ const PayModal = ({ cart, grandTotal }: PayModalProps) => {
   const firstItem = cart[0];
   const otherItemsCount = cart.length - 1;
 
+  const handleMouseOver = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.style.background = '#fbaf85'; // Change background color on hover
+  };
+
+  const handleMouseOut = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.style.background = '#d87d4a'; // Restore original background color on mouse out
+  };
+
   return (
     <>
       <div className="checkout-pay">
-        <div>
-          <button
-            onClick={openModal}
-            style={{
-              border: 'none',
-              background: 'transparent',
-              cursor: 'pointer',
-            }}
-          >
-            CHECKOUT & PAY
-          </button>
-        </div>
+        <button
+          onClick={openModal}
+          style={{
+            width: '100%',
+            padding: '12px 25px',
+            border: 'none',
+            background: '#d87d4a',
+            color: '#f1f1f1',
+            fontSize: '14px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            transition: 'background 0.3s ease',
+          }}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+        >
+          CONTINUE & PAY
+        </button>
       </div>
       <Modal
         onAfterOpen={() => (document.body.style.overflow = 'hidden')}
         onAfterClose={() => (document.body.style.overflow = 'auto')}
         className="checkout-modal"
         onRequestClose={closeModal}
-        shouldCloseOnOverlayClick={true}
+        shouldCloseOnOverlayClick={false}
         isOpen={modalIsOpen}
         contentLabel="Example Modal"
       >
@@ -71,7 +85,7 @@ const PayModal = ({ cart, grandTotal }: PayModalProps) => {
 
             <div className="accept-order">
               <div className="item-box">
-                <div className="item-showcase">
+                <div className="item-img">
                   <img
                     src={`http://localhost:3001/assets/product-${firstItem.item.slug}/desktop/image-product.jpg`}
                     alt={firstItem.item.name}
@@ -104,9 +118,16 @@ const PayModal = ({ cart, grandTotal }: PayModalProps) => {
               )}
             </div>
           </div>
-          <Button isLink={true} dir={'/'} type={'primary'} onClick={closeModal}>
-            back to home
-          </Button>
+          <div className="back-home">
+            <Button
+              isLink={true}
+              dir={'/'}
+              type={'primary'}
+              onClick={closeModal}
+            >
+              back to home
+            </Button>
+          </div>
         </div>
       </Modal>
     </>

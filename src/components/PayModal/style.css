@@ -11,18 +11,29 @@
   padding: 48px;
   overflow: auto;
 }
+.ReactModal__Overlay {
+  background-color: rgba(151, 151, 151, 0.4) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .h3-accept h3 {
   color: black;
-  font-size: 24px;
+  font-size: 38px;
   text-transform: uppercase;
+  font-weight: 500;
+}
+
+.span-accept {
+  color: #a6a5a5;
+  font-size: 13px;
 }
 
 .accept-order {
   display: flex;
-  gap: 1rem;
   align-items: center;
-  padding: 1rem 0;
+  margin: 1rem 0;
   border-radius: 8px;
 }
 
@@ -34,12 +45,12 @@
   border-radius: 8px;
 }
 
-.item-showcase {
-  width: 80px;
+.item-img {
+  width: 100px;
   overflow: hidden;
 }
 
-.item-showcase img {
+.item-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -61,19 +72,22 @@
 .items-quantity {
   padding-top: 1rem;
   margin-left: 2rem;
+  padding-right: 1rem;
 }
 
 .items-quantity span {
   color: #a6a5a5;
+  font-size: 13px;
 }
 
 .total-review {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
   background-color: black;
   width: 100%;
-  height: 110px;
+  padding: 1.8rem 0;
   border-radius: 8px;
 }
 
@@ -84,4 +98,9 @@
 
 .gr-total span {
   font-weight: bold;
+}
+
+.back-home a {
+  width: 88%;
+  text-align: center;
 }
