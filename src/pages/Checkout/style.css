@@ -9,14 +9,28 @@
 .checkout-left {
   display: flex;
   margin: 12rem 0;
-  padding: 1rem;
+  padding: 1rem 4rem 1rem 1rem;
   background-color: white;
   width: 70%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 .checkout-container {
   display: flex;
   padding: 0 3rem;
 }
+
+.checkout-header {
+  margin-bottom: 2rem;
+}
+
+.checkout-header h1 {
+  /* color: #d87d4a; */
+  color: black;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
 .billing-form {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -62,55 +76,100 @@
   gap: 1rem;
   width: 40%;
   background-color: white;
-  padding: 0 1rem 1rem 1rem;
+  padding: 2rem;
   margin: 12rem 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+  border-radius: 8px;
+}
+
+.summary-container h2 {
+  color: black;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .summary-item {
   display: flex;
   gap: 1rem;
   align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.summary-item .summary-item-details {
+.summary-item-details {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  width: 210px;
+  width: 100%;
 }
 
-.summary-item .summary-item-details .summary-item-image {
-  width: 107px;
-}
-
-.summary-item .summary-item-details .summary-item-image img {
+.summary-item-image {
   width: 80px;
   height: 80px;
+  overflow: hidden;
 }
 
-.summary-item .summary-item-details .summary-item-text {
+.summary-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.summary-item-text {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  margin-bottom: 1rem;
-  margin-right: 5rem;
+  flex-grow: 1;
 }
 
-.summary-item .summary-item-details .summary-item-text h3 {
+.summary-item-text h3 {
   font-size: 15px;
   color: black;
 }
 
-.summary-item .summary-item-details .summary-item-text span {
+.summary-item-text span {
   font-size: 14px;
   color: #a6a5a5;
 }
 
-.summary-item .summary-item-details .quantity span {
-  color: #a6a5a5;
+.quantity {
+  margin-left: auto;
+
   font-size: 14px;
 }
 
-.summary-container h3 {
+.quantity span {
+  color: #a6a5a5;
+}
+
+.total-price,
+.shipping,
+.vat,
+.grand-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+
+.total-price .total,
+.shipping-label,
+.vat-label,
+.grand-total-label {
+  color: #a6a5a5;
+  text-transform: uppercase;
+}
+
+.total-price .tot-price,
+.shipping-amount,
+.vat-amount,
+.grand-total-amount {
   color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.grand-total {
+  margin-top: 2rem;
 }

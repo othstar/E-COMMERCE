@@ -2,6 +2,7 @@ import './style.css';
 import Input from '../../components/UI/Input';
 import { useAppSelector } from '../../store/hooks';
 import { getProductCurrNumber } from '../../pages/ProductPage/Product'; // Ensure this path is correct
+import PayModal from '../../components/PayModal';
 
 const Checkout = () => {
   const cart = useAppSelector((state) => state.cart.value); // Get cart data from Redux store
@@ -16,18 +17,23 @@ const Checkout = () => {
   };
 
   const totalPrice = calculateTotalPrice(); // Calculate total price
+  const VAT = totalPrice * 0.18; // Calculate VAT at 18%
+  const shippingCost = cart.length > 0 ? 50 : 0; // Fixed shipping cost if there are items in the cart
+  const grandTotal = totalPrice + VAT + shippingCost; // Calculate grand total
 
   return (
     <div className="checkout-body">
       <div className="checkout-wrapper container">
         <div className="checkout-left">
           <div className="checkout container">
+            <div className="checkout-header">
+              <h1>checkout</h1>
+            </div>
             <div className="billing-form">
               <Input
                 label={'Name'}
                 type="text"
                 placeholder="Your name"
-                // isError={true}
                 errorMessage="Wrong name"
               />
               <Input
@@ -103,7 +109,7 @@ const Checkout = () => {
           </div>
         </div>
         <div className="summary-container">
-          <h2>Order Summary</h2>
+          <h2>Summary</h2>
           {cart.map((cartItem) => (
             <div key={cartItem.item.id} className="summary-item">
               <div className="summary-item-details">
@@ -125,8 +131,27 @@ const Checkout = () => {
           ))}
           <div className="total-price">
             <span className="total">Total</span>
-            <span className="tot-price">{`$ ${totalPrice}`}</span>
+            <span className="tot-price">{`$ ${totalPrice.toFixed(2)}`}</span>
           </div>
+          {cart.length > 0 && (
+            <div className="shipping">
+              <span className="shipping-label">Shipping</span>
+              <span className="shipping-amount">{`$ ${shippingCost.toFixed(
+                2,
+              )}`}</span>
+            </div>
+          )}
+          <div className="vat">
+            <span className="vat-label">VAT (included)</span>
+            <span className="vat-amount">{`$ ${VAT.toFixed(2)}`}</span>
+          </div>
+          <div className="grand-total">
+            <span className="grand-total-label">Grand Total</span>
+            <span className="grand-total-amount">{`$ ${grandTotal.toFixed(
+              2,
+            )}`}</span>
+          </div>
+          <PayModal cart={cart} grandTotal={grandTotal} />
         </div>
       </div>
     </div>
