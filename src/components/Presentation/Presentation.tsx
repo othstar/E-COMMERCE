@@ -1,4 +1,5 @@
 import Image from '/assets/shared/desktop/image-best-gear.jpg';
+import ImgTablet from '/assets/shared/tablet/image-best-gear.jpg';
 import './style.css';
 
 const Presentation = () => {
@@ -18,7 +19,12 @@ const Presentation = () => {
         </p>
       </div>
       <div className="logo-container">
-        <img src={Image} alt="photo" style={{ borderRadius: '8px' }} />
+        <div className="logo-desktop">
+          <img src={Image} alt="photo" style={{ borderRadius: '8px' }} />
+        </div>
+        <div className="logo-tablet">
+          <img src={ImgTablet} alt="photo" style={{ borderRadius: '8px' }} />
+        </div>
       </div>
     </div>
   );

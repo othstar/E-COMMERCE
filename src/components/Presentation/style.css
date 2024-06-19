@@ -27,3 +27,31 @@
 .logo-container {
   margin-bottom: 2rem;
 }
+
+.logo-tablet {
+  display: none;
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .presentation {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+  .logo-desktop {
+    display: none;
+  }
+  .logo-tablet {
+    display: block;
+  }
+  .logo-tablet img {
+    width: 100%;
+  }
+  .description {
+    width: 80%;
+    text-align: center;
+  }
+  .description p {
+    font-size: 16px;
+  }
+}

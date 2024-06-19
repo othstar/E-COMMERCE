@@ -67,3 +67,14 @@ header {
   height: 1px;
   background-color: rgba(241, 241, 241, 0.3);
 }
+
+.burger-bar {
+  display: none;
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .categories {
+    display: none;
+  }
+}

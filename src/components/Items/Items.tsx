@@ -39,6 +39,7 @@ const Items = () => {
           style={{ background: '#D87D4A' }}
         >
           <img className="prod-image" src={zx9} alt="image" />
+          <div className="respo-image"></div>
           <img className="circle-image" src={Circle} alt="" />
           <div className="item-info">
             <h3>{product.name}</h3>
@@ -60,6 +61,7 @@ const Items = () => {
           style={{ background: 'transparent' }}
         >
           <img className="prod-image-sec" src={zx7} alt="image" />
+          <div className="respo-image-sec"></div>
           <div className="item-info-sec">
             <h3>{product.name}</h3>
             <Button
@@ -76,6 +78,7 @@ const Items = () => {
         <div key={product.id} className="item-container-third">
           <div className="image-div">
             <img className="prod-image-third" src={yx1} alt={product.name} />
+            <div className="respo-image-third"></div>
           </div>
           <div className="item-info-third">
             <h3>{product.name}</h3>

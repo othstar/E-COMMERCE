@@ -1,42 +1,96 @@
 .footer-nav {
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   padding: 2rem 0;
 }
 
-.logo-descr a {
+.logo-descr {
+  display: flex;
+  gap: 35rem;
+  align-items: center;
+}
+
+.logo a {
   font-size: 24px;
   font-weight: bold;
 }
 
-.logo-descr p {
-  margin: 2rem 0;
-  font-size: 14px;
-}
-
-.logo-descr span {
-  font-size: 14px;
-}
-
 .footer-categories {
-  width: 100%;
+  display: flex;
 }
 
-.footer-categories .categories {
+.footer-ul {
   display: flex;
-  justify-content: space-evenly;
+  gap: 2rem;
   text-transform: uppercase;
 }
 
-.footer-categories .categories a {
+.footer-ul a {
   font-size: 14px;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
-.social-networks {
-  margin-top: 4.5rem;
-  margin-right: 1.3rem;
+.footer-ul li a:hover {
+  color: #d87d4a;
+}
+
+.footer-descr {
+  display: flex;
+  gap: 23rem;
+  align-items: center;
+}
+
+.footer-descr p {
+  margin: 2rem 0;
+  font-size: 14px;
+  color: #a6a5a5;
+}
+
+.footer-descr .social-networks {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
+}
+
+.copyright-div {
+  display: flex;
+}
+
+.copyright-div .social-networks {
+  display: none;
+}
+
+.rights-descr span {
+  font-size: 14px;
+  color: #a6a5a5;
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .logo-descr {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  .footer-ul {
+    gap: 4rem;
+  }
+
+  .footer-descr .social-networks {
+    display: none;
+  }
+  .footer-descr p {
+    font-size: 16px;
+  }
+
+  .copyright-div {
+    justify-content: space-between;
+  }
+
+  .copyright-div .social-networks {
+    display: flex;
+    gap: 1rem;
+  }
 }

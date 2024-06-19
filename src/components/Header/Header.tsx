@@ -7,6 +7,7 @@ const Header = () => {
   return (
     <header>
       <div className="navbar container">
+        <div className="burger-bar"></div>
         <div className="logo">
           <NavLink to={'/'}>audiophile</NavLink>
         </div>
