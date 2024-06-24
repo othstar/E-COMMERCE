@@ -76,7 +76,7 @@ const CartComponent = () => {
                 </div>
                 <div className="items-info">
                   <h3>{items.item.name}</h3>
-                  <span className="items-price">{items.item.price}$</span>
+                  <span className="items-price">$ {items.item.price}</span>
                 </div>
               </div>
               <div className="descr-container">

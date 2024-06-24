@@ -116,3 +116,11 @@
   color: black;
   font-weight: bold;
 }
+
+/* Tablets */
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .cart-modal {
+    right: 50px;
+  }
+}

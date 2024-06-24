@@ -78,7 +78,12 @@ const Items = () => {
         <div key={product.id} className="item-container-third">
           <div className="image-div">
             <img className="prod-image-third" src={yx1} alt={product.name} />
-            <div className="respo-image-third"></div>
+            <div className="tablet-image-third">
+              <img
+                src="/assets/home/tablet/image-earphones-yx1.jpg"
+                alt={product.name}
+              />
+            </div>
           </div>
           <div className="item-info-third">
             <h3>{product.name}</h3>

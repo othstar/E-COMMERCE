@@ -77,4 +77,10 @@ header {
   .categories {
     display: none;
   }
+
+  .navbar-left {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+  }
 }

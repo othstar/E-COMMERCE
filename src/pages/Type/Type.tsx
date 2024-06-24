@@ -39,6 +39,12 @@ const Type = () => {
               <div className="type-image">
                 <img src={product.image.desktop} alt={product.name} />
               </div>
+              <div className="image-tablet">
+                <img src={product.image.tablet} alt={product.name} />
+              </div>
+              <div className="image-mobile">
+                <img src={product.image.mobile} alt={product.name} />
+              </div>
               <div className="type-descr">
                 {product.new ? <span>new product</span> : null}
                 <h3>{product.name}</h3>

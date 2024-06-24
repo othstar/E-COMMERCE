@@ -13,7 +13,15 @@
   width: 60%;
 }
 
-.img-container img {
+.tablet-image {
+  display: none;
+}
+
+.mobile-image {
+  display: none;
+}
+
+.desktop-image img {
   width: 550px;
   height: 550px;
 }
@@ -29,6 +37,10 @@
 .descr-container h3 {
   color: #101010;
   font-size: 36px;
+}
+
+.descr-container span {
+  font-weight: bold;
 }
 
 .descr-container p {
@@ -90,18 +102,31 @@
   margin-top: 5rem;
 }
 
-.left-images {
+.desktop-left-images {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.left-images img,
-.right-image img {
+.tablet-left-images,
+.tablet-right-image,
+.mobile-left-images,
+.mobile-right-image {
+  display: none;
+}
+
+.desktop-left-images img,
+.desktop-right-image img,
+.tablet-left-images img,
+.tablet-right-image img,
+.mobile-left-images img,
+.mobile-right-image img {
   border-radius: 8px;
 }
 
-.right-image {
+.desktop-right-image,
+.tablet-right-image,
+.mobile-right-image {
   width: 45%;
 }
 
@@ -129,9 +154,17 @@
   gap: 2rem;
 }
 
-.others-container img {
+.desktop-product-img img {
   width: 350px;
   height: 320px;
+}
+
+.tablet-product-img {
+  display: none;
+}
+
+.mobile-product-img {
+  display: none;
 }
 
 .others-container span {
@@ -143,4 +176,82 @@
 .others-container a {
   width: 95px;
   text-align: center;
+}
+
+/* Tablets */
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .product-container .descr-container {
+    width: 90%;
+  }
+
+  .desktop-image {
+    display: none;
+  }
+
+  .tablet-image {
+    display: block;
+  }
+
+  .tablet-image img {
+    width: 280px;
+    height: 480px;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+
+  .features-container {
+    width: 100%;
+  }
+
+  .features-container p {
+    font-size: 16px;
+  }
+
+  .inTheBox {
+    display: flex;
+    gap: 20rem;
+  }
+
+  .includes-wrapper {
+    font-size: 16px;
+  }
+
+  .desktop-product-img {
+    display: none;
+  }
+
+  .desktop-left-images,
+  .desktop-right-image {
+    display: none;
+  }
+
+  .tablet-left-images,
+  .tablet-right-image {
+    display: block;
+  }
+
+  .tablet-right-image {
+    margin-right: 2rem;
+  }
+
+  .tablet-right-image img {
+    width: 395px;
+    height: 405px;
+  }
+
+  .tablet-left-images img {
+    width: 400px;
+    height: 200px;
+  }
+
+  .tablet-product-img {
+    display: block;
+  }
+  .tablet-product-img img {
+    width: 223px;
+    height: 318px;
+  }
 }

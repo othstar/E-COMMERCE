@@ -54,16 +54,30 @@ const Productfunc = () => {
         <div key={product.id} className="product-descr container">
           <div className="product-container">
             <div className="img-container">
-              <img
-                src={`http://localhost:3001/assets/product-${product.slug}/desktop/image-product.jpg`}
-                alt={product.name}
-              />
+              <div className="desktop-image">
+                <img
+                  src={`http://localhost:3001/assets/product-${product.slug}/desktop/image-product.jpg`}
+                  alt={product.name}
+                />
+              </div>
+              <div className="tablet-image">
+                <img
+                  src={`http://localhost:3001/assets/product-${product.slug}/tablet/image-product.jpg`}
+                  alt={product.name}
+                />
+              </div>
+              <div className="mobile-image">
+                <img
+                  src={`http://localhost:3001/assets/product-${product.slug}/mobile/image-product.jpg`}
+                  alt={product.name}
+                />
+              </div>
             </div>
             <div className="descr-container">
               {product.new ? <span>new product</span> : null}
               <h3>{product.name}</h3>
               <p>{product.description}</p>
-              <span className="product-price">{product.price}$</span>
+              <span className="product-price">$ {product.price}</span>
               <div className="product-buy">
                 <NumberInput number={num} setNumber={setNum} maxQuantity={50} />
                 <Button
@@ -82,20 +96,22 @@ const Productfunc = () => {
             </div>
             <div className="inTheBox">
               <h3>in the box</h3>
-              {product.includes.map((include: Includes, index) => (
-                <div key={`${product.id}-${index}`}>
-                  <span>
-                    <span style={{ color: '#D87D4A' }}>
-                      {include.quantity}x
-                    </span>{' '}
-                    {include.item}
-                  </span>
-                </div>
-              ))}
+              <div className="includes-wrapper">
+                {product.includes.map((include: Includes, index) => (
+                  <div key={`${product.id}-${index}`}>
+                    <span>
+                      <span style={{ color: '#D87D4A' }}>
+                        {include.quantity}x
+                      </span>{' '}
+                      {include.item}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
           <div className="images-showcase">
-            <div className="left-images">
+            <div className="desktop-left-images">
               <img
                 src={`http://localhost:3001/assets/product-${product.slug}/desktop/image-gallery-1.jpg`}
                 alt={product.slug}
@@ -105,9 +121,41 @@ const Productfunc = () => {
                 alt={product.slug}
               />
             </div>
-            <div className="right-image">
+            <div className="desktop-right-image">
               <img
                 src={`http://localhost:3001/assets/product-${product.slug}/desktop/image-gallery-3.jpg`}
+                alt={product.slug}
+              />
+            </div>
+            <div className="tablet-left-images">
+              <img
+                src={`http://localhost:3001/assets/product-${product.slug}/tablet/image-gallery-1.jpg`}
+                alt={product.slug}
+              />
+              <img
+                src={`http://localhost:3001/assets/product-${product.slug}/tablet/image-gallery-2.jpg`}
+                alt={product.slug}
+              />
+            </div>
+            <div className="tablet-right-image">
+              <img
+                src={`http://localhost:3001/assets/product-${product.slug}/tablet/image-gallery-3.jpg`}
+                alt={product.slug}
+              />
+            </div>
+            <div className="mobile-left-images">
+              <img
+                src={`http://localhost:3001/assets/product-${product.slug}/mobile/image-gallery-1.jpg`}
+                alt={product.slug}
+              />
+              <img
+                src={`http://localhost:3001/assets/product-${product.slug}/mobile/image-gallery-2.jpg`}
+                alt={product.slug}
+              />
+            </div>
+            <div className="mobile-right-image">
+              <img
+                src={`http://localhost:3001/assets/product-${product.slug}/mobile/image-gallery-3.jpg`}
                 alt={product.slug}
               />
             </div>
@@ -135,10 +183,24 @@ const Productfunc = () => {
                     see product
                   </Button>
                   <span>{other.name}</span>
-                  <img
-                    src={`http://localhost:3001/assets/shared/desktop/image-${other.slug}.jpg`}
-                    alt={other.name}
-                  />
+                  <div className="desktop-product-img">
+                    <img
+                      src={`http://localhost:3001/assets/shared/desktop/image-${other.slug}.jpg`}
+                      alt={other.name}
+                    />
+                  </div>
+                  <div className="tablet-product-img">
+                    <img
+                      src={`http://localhost:3001/assets/shared/tablet/image-${other.slug}.jpg`}
+                      alt={other.name}
+                    />
+                  </div>
+                  <div className="mobile-product-img">
+                    <img
+                      src={`http://localhost:3001/assets/shared/mobile/image-${other.slug}.jpg`}
+                      alt={other.name}
+                    />
+                  </div>
                 </div>
               );
             })}

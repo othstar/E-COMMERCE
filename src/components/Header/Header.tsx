@@ -2,14 +2,17 @@ import { NavLink } from 'react-router-dom';
 import './style.css';
 
 import HeaderModal from '../HeaderModal';
+import BurgerContainer from '../BurgerbarModal';
 
 const Header = () => {
   return (
     <header>
       <div className="navbar container">
-        <div className="burger-bar"></div>
-        <div className="logo">
-          <NavLink to={'/'}>audiophile</NavLink>
+        <div className="navbar-left">
+          <BurgerContainer />
+          <div className="logo">
+            <NavLink to={'/'}>audiophile</NavLink>
+          </div>
         </div>
         <ul className="categories">
           <li>

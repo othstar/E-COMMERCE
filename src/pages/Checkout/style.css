@@ -173,3 +173,20 @@
 .grand-total {
   margin-top: 2rem;
 }
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .checkout-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .checkout-left {
+    margin-bottom: 2rem;
+  }
+
+  .summary-container {
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    width: 72%;
+  }
+}
