@@ -54,3 +54,28 @@
     font-size: 16px;
   }
 }
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .showcase {
+    background-image: url('/assets/home/mobile/image-header.jpg');
+    background-size: 100%;
+    background-position: calc(50% - 20px);
+    background-repeat: no-repeat;
+  }
+
+  .showcase-descr {
+    width: 70%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .showcase-descr h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+  .showcase-descr p {
+    font-size: 15px;
+  }
+}

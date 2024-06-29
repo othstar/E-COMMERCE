@@ -1,18 +1,11 @@
 import Modal from 'react-modal';
 import { useState } from 'react';
 import './style.css';
-import Button from '../UI/Button';
-import NumberInput from '../UI/NumberInput';
-import { getProductCurrNumber } from '../../pages/ProductPage/Product';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { clearCart, updateCart } from '../../store/Cart/Cart.slice';
+
 import Filter from '../Filter';
 
 const BurgerContainer = () => {
   const [modalIsOpen, setIsOpen] = useState(false);
-
-  const dispatch = useAppDispatch();
-  const cart = useAppSelector((state) => state.cart.value);
 
   const openModal = () => {
     setIsOpen(true);
@@ -21,15 +14,6 @@ const BurgerContainer = () => {
     setIsOpen(false);
   };
 
-  const calculateTotalPrice = () => {
-    return cart.reduce((total, items) => {
-      const itemTotal =
-        items.item.price * getProductCurrNumber(cart, items.item);
-      return total + itemTotal;
-    }, 0);
-  };
-
-  const totalPrice = calculateTotalPrice();
   return (
     <>
       <div className="burger-bar">

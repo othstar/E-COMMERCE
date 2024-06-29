@@ -84,3 +84,21 @@ header {
     align-items: center;
   }
 }
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  header {
+    position: static;
+  }
+
+  .categories {
+    display: none;
+  }
+
+  .navbar-left {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+  }
+}

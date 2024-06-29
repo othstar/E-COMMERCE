@@ -120,6 +120,10 @@
   display: none;
 }
 
+.mobile-image-third {
+  display: none;
+}
+
 /* Tablets */
 @media (min-width: 481px) and (max-width: 1024px) {
   .item-container {
@@ -194,5 +198,94 @@
   .tablet-image-third img {
     width: 100%;
     height: 385px;
+  }
+}
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .item-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 600px;
+    padding-top: 5rem;
+  }
+
+  .item-info {
+    align-items: center;
+    width: 90%;
+  }
+  .item-info h3 {
+    font-size: 40px;
+  }
+
+  .item-info p {
+    font-size: 15px;
+  }
+  .prod-image {
+    display: none;
+  }
+
+  .circle-image {
+    top: -250px;
+    left: -270px;
+  }
+  .respo-image {
+    display: flex;
+    background-image: url('/assets/home/mobile/image-speaker-zx9.png');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 235px;
+    width: 200px;
+    margin-bottom: 1rem;
+    z-index: 5;
+  }
+
+  .item-container-sec {
+    width: 100%;
+    height: 320px;
+    padding: 0;
+  }
+  .prod-image-sec {
+    display: none;
+  }
+
+  .item-info-sec {
+    position: absolute;
+    left: 0;
+    top: 60px;
+  }
+
+  .respo-image-sec {
+    background-image: url('/assets/home/mobile/image-speaker-zx7.jpg');
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+    position: relative;
+  }
+
+  .item-container-third {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    padding: 0;
+  }
+
+  .item-info-third {
+    width: 100vw;
+    gap: 4rem;
+  }
+
+  .prod-image-third {
+    display: none;
+  }
+
+  .mobile-image-third {
+    display: block;
   }
 }

@@ -15,3 +15,15 @@ body {
   background-color: #191919;
   font-family: 'Manrope', sans-serif;
 }
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  :root {
+    width: 92vw;
+  }
+
+  .container {
+    width: 100%;
+  }
+}

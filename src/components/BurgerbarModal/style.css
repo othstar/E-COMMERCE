@@ -1,5 +1,5 @@
 .burger-bar {
-  display: block;
+  display: none;
 }
 .burger-bar svg {
   width: 25px;
@@ -17,4 +17,18 @@
   max-height: 100%;
   border-radius: 8px;
   padding: 48px;
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .burger-bar {
+    display: block;
+  }
+}
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .burger-bar {
+    display: block;
+  }
 }

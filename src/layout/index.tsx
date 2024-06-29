@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Router from '../router';
+import './style.css';
 
 const Layout = () => {
   return (

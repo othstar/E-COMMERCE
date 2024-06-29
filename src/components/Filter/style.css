@@ -4,3 +4,13 @@
   justify-content: space-around;
   width: 100%;
 }
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .filters {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+}

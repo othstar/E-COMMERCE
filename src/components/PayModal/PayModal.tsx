@@ -94,7 +94,7 @@ const PayModal = ({ cart, grandTotal }: PayModalProps) => {
                 <div className="item-showcase-descr">
                   <div className="first-item-review">
                     <h3>{firstItem.item.name}</h3>
-                    <span>${firstItem.item.price.toFixed(2)}</span>
+                    <span>$ {firstItem.item.price.toFixed(2)}</span>
                   </div>
                   <div className="items-quantity">
                     <span>x{firstItem.amount}</span>

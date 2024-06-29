@@ -84,6 +84,13 @@ const Items = () => {
                 alt={product.name}
               />
             </div>
+
+            <div className="mobile-image-third">
+              <img
+                src="/assets/home/mobile/image-earphones-yx1.jpg"
+                alt={product.name}
+              />
+            </div>
           </div>
           <div className="item-info-third">
             <h3>{product.name}</h3>
