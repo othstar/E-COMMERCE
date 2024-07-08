@@ -94,3 +94,34 @@
     gap: 1rem;
   }
 }
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .logo-descr {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .footer-ul {
+    flex-direction: column;
+    text-align: center;
+    padding-right: 3rem;
+  }
+
+  .footer-descr {
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+    gap: 2rem;
+  }
+  .footer-descr p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .copyright-div {
+    margin: auto;
+    padding-top: 2rem;
+  }
+}

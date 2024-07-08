@@ -124,3 +124,16 @@
     right: 50px;
   }
 }
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .cart-modal {
+    right: 0;
+    width: 70%;
+    margin-right: 0.7rem;
+  }
+  .items-container {
+    gap: 0;
+  }
+}

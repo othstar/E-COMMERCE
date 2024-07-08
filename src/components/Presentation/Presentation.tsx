@@ -1,5 +1,6 @@
 import Image from '/assets/shared/desktop/image-best-gear.jpg';
 import ImgTablet from '/assets/shared/tablet/image-best-gear.jpg';
+import ImgMobile from '/assets/shared/mobile/image-best-gear.jpg';
 import './style.css';
 
 const Presentation = () => {
@@ -24,6 +25,9 @@ const Presentation = () => {
         </div>
         <div className="logo-tablet">
           <img src={ImgTablet} alt="photo" style={{ borderRadius: '8px' }} />
+        </div>
+        <div className="logo-mobile">
+          <img src={ImgMobile} alt="photo" style={{ borderRadius: '8px' }} />
         </div>
       </div>
     </div>

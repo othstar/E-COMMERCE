@@ -4,3 +4,11 @@
   font-size: 36px;
   padding: 5rem 0 4rem 0;
 }
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .categorie {
+    padding: 2rem 0;
+  }
+}

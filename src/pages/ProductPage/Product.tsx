@@ -74,7 +74,7 @@ const Productfunc = () => {
               </div>
             </div>
             <div className="descr-container">
-              {product.new ? <span>new product</span> : null}
+              {product.new ? <span className="new">new product</span> : null}
               <h3>{product.name}</h3>
               <p>{product.description}</p>
               <span className="product-price">$ {product.price}</span>

@@ -31,4 +31,13 @@
   .burger-bar {
     display: block;
   }
+  .burger-modal {
+    height: fit-content;
+    width: 80%;
+    top: 70px;
+    left: 5px;
+  }
+  .burger-container .filters {
+    padding: 0;
+  }
 }

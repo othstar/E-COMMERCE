@@ -32,6 +32,10 @@
   display: none;
 }
 
+.logo-mobile {
+  display: none;
+}
+
 /* Tablets */
 @media (min-width: 481px) and (max-width: 1024px) {
   .presentation {
@@ -53,5 +57,38 @@
   }
   .description p {
     font-size: 16px;
+  }
+}
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .logo-desktop {
+    display: none;
+  }
+  .logo-tablet {
+    display: none;
+  }
+
+  .logo-mobile {
+    display: block;
+  }
+
+  .logo-mobile img {
+    width: 100%;
+  }
+
+  .presentation {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  .description {
+    width: 80%;
+    text-align: center;
+  }
+
+  .description h3 {
+    font-size: 30px;
   }
 }

@@ -96,3 +96,37 @@
     margin-left: 3.5rem;
   }
 }
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .type-image {
+    display: none;
+  }
+
+  .type-container {
+    flex-direction: column;
+  }
+
+  .type-descr {
+    width: 90%;
+    text-align: center;
+  }
+
+  .type-descr h3 {
+    margin-left: 5rem;
+  }
+
+  .container:nth-child(even) .type-container {
+    flex-direction: column;
+  }
+
+  .image-mobile {
+    display: block;
+  }
+
+  .image-mobile img {
+    width: 90%;
+    margin-left: 1.5rem;
+  }
+}
