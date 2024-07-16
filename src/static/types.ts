@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
 export type CartItem = {
   amount: number;
@@ -36,7 +36,8 @@ export type InputProps = {
   placeholder?: string;
   name?: string;
   label?: null | string;
-};
+  checked?: boolean;
+} & HTMLAttributes<HTMLInputElement>;
 
 export type Image = {
   mobile: string;

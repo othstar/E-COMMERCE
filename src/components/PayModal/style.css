@@ -112,3 +112,18 @@
     right: 250px;
   }
 }
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .checkout-modal {
+    width: 300px;
+    height: 70%;
+    right: 10px;
+    top: 100px;
+  }
+
+  .accept-order {
+    flex-direction: column;
+    width: 105%;
+  }
+}

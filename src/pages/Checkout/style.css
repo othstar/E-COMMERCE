@@ -63,6 +63,17 @@
   margin-bottom: 5rem;
 }
 
+.cash-delivery {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.cash-descr p {
+  color: #a6a5a5;
+  font-size: 14px;
+}
+
 .e-money {
   display: grid;
   grid-template-columns: 1fr 3fr;
@@ -188,5 +199,40 @@
     margin: 0 auto;
     margin-bottom: 5rem;
     width: 72%;
+  }
+}
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .checkout-wrapper {
+    flex-direction: column;
+  }
+  .billing-form,
+  .payment-radio,
+  .e-money {
+    display: flex;
+    flex-direction: column;
+  }
+  .shipping-form .input-2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .payment-radio {
+    gap: 0;
+  }
+
+  .checkout-left {
+    margin-bottom: 0;
+    margin-top: 4rem;
+    margin-left: 1.5rem;
+  }
+
+  .summary-container {
+    margin: 0;
+    width: 74%;
+    margin-bottom: 4rem;
+    margin-left: 1.5rem;
   }
 }
