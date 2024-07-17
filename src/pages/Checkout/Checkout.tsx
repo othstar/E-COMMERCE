@@ -1,9 +1,11 @@
 import './style.css';
 import Input from '../../components/UI/Input';
 import { useAppSelector } from '../../store/hooks';
-import { getProductCurrNumber } from '../../pages/ProductPage/Product'; // Ensure this path is correct
+import { getProductCurrNumber } from '../../pages/ProductPage/Product';
 import PayModal from '../../components/PayModal';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { Inputs } from '../../static/types';
 
 const Checkout = () => {
   const cart = useAppSelector((state) => state.cart.value); // Get cart data from Redux store
@@ -11,6 +13,23 @@ const Checkout = () => {
   const [paymentMethod, setPaymentMethod] = useState<'e-money' | 'cash'>(
     'e-money',
   );
+
+  const {
+    register,
+    handleSubmit,
+    trigger,
+    formState: { errors },
+  } = useForm<Inputs>();
+
+  const onSubmit = (data: Inputs) => {
+    console.log(data);
+  };
+
+  const inputRef = useRef<null | HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   // Function to calculate total price
   const calculateTotalPrice = () => {
@@ -30,57 +49,124 @@ const Checkout = () => {
     <div className="checkout-body">
       <div className="checkout-wrapper container">
         <div className="checkout-left">
-          <div className="checkout container">
-            <div className="checkout-header">
-              <h1>checkout</h1>
-            </div>
+          <form
+            className="checkout container"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <div className="checkout-header"></div>
             <div className="billing-form">
               <Input
-                label={'Name'}
+                {...register('name', {
+                  required: {
+                    value: true,
+                    message: 'Please enter your name',
+                  },
+                  minLength: {
+                    value: 2,
+                    message: ' Your name must be at least two characters',
+                  },
+                })}
+                // ref={inputRef}
+                label="Name"
                 type="text"
                 placeholder="Your name"
-                errorMessage="Wrong name"
+                isError={Boolean(errors.name)}
+                errorMessage={errors.name?.message}
               />
               <Input
-                label={'Email address'}
+                {...register('email', {
+                  required: {
+                    value: true,
+                    message: 'Please enter your Email Address',
+                  },
+                  pattern: {
+                    value: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                    message: 'Please enter valid Email',
+                  },
+                })}
+                label="Email address"
                 type="text"
                 placeholder="Your email"
-                errorMessage="Wrong email address"
+                isError={Boolean(errors.email)}
+                errorMessage={errors.email?.message}
               />
               <Input
-                label={'Phone Number'}
+                {...register('phoneNumber', {
+                  required: {
+                    value: true,
+                    message: 'Please enter your Phone Number',
+                  },
+                  pattern: {
+                    value: /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g,
+                    message: 'Please enter valid Phone Number',
+                  },
+                })}
+                label="Phone Number"
                 type="text"
                 placeholder="Your phone number"
-                errorMessage="Wrong phone number"
+                isError={Boolean(errors.phoneNumber)}
+                errorMessage={errors.phoneNumber?.message}
               />
             </div>
             <div className="shipping-form">
               <div className="input-1">
                 <Input
-                  label={'Address'}
+                  {...register('address', {
+                    required: {
+                      value: true,
+                      message: 'Please enter your Address',
+                    },
+                  })}
+                  label="Address"
                   type="text"
                   placeholder="Your address"
-                  errorMessage="Wrong address"
+                  isError={Boolean(errors.address)}
+                  errorMessage={errors.address?.message}
                 />
               </div>
               <div className="input-2">
                 <Input
-                  label={'ZIP code'}
+                  {...register('zipCode', {
+                    required: {
+                      value: true,
+                      message: 'Please enter your ZIP Code',
+                    },
+                    minLength: {
+                      value: 4,
+                      message: ' Your ZIP Code must be at least four numbers',
+                    },
+                  })}
+                  label="ZIP code"
                   type="text"
                   placeholder="ZIP code"
-                  errorMessage="Wrong zip code"
+                  isError={Boolean(errors.zipCode)}
+                  errorMessage={errors.zipCode?.message}
                 />
                 <Input
-                  label={'City'}
+                  {...register('city', {
+                    required: {
+                      value: true,
+                      message: 'Please enter your City',
+                    },
+                  })}
+                  label="City"
                   type="text"
                   placeholder="Your city"
-                  errorMessage="Wrong city"
+                  isError={Boolean(errors.city)}
+                  errorMessage={errors.city?.message}
                 />
                 <Input
-                  label={'Country'}
+                  {...register('country', {
+                    required: {
+                      value: true,
+                      message: 'Please enter your Country',
+                    },
+                  })}
+                  label="Country"
                   type="text"
                   placeholder="Your country"
-                  errorMessage="Wrong country"
+                  isError={Boolean(errors.country)}
+                  errorMessage={errors.country?.message}
                 />
               </div>
             </div>
@@ -92,14 +178,14 @@ const Checkout = () => {
                 <Input
                   name="payment-type"
                   type="radio"
-                  label={'e-Money'}
+                  label="e-Money"
                   checked={paymentMethod === 'e-money'}
                   onChange={() => setPaymentMethod('e-money')}
                 />
                 <Input
                   name="payment-type"
                   type="radio"
-                  label={'Cash on delivery'}
+                  label="Cash on delivery"
                   checked={paymentMethod === 'cash'}
                   onChange={() => setPaymentMethod('cash')}
                 />
@@ -131,20 +217,34 @@ const Checkout = () => {
             ) : (
               <div className="e-money">
                 <Input
-                  label={'e-Money Number'}
+                  {...register('eMoneyNumber', {
+                    required: {
+                      value: true,
+                      message: 'Please enter your e-Money Number',
+                    },
+                  })}
+                  label="e-Money Number"
                   type="text"
                   placeholder="Your e-Money number"
-                  errorMessage="Wrong e-Money Number"
+                  isError={Boolean(errors.eMoneyNumber)}
+                  errorMessage={errors.eMoneyNumber?.message}
                 />
                 <Input
-                  label={'e-Money PIN'}
+                  {...register('eMoneyPin', {
+                    required: {
+                      value: true,
+                      message: 'Please enter your e-Money PIN',
+                    },
+                  })}
+                  label="e-Money PIN"
                   type="text"
                   placeholder="Your e-Money PIN"
-                  errorMessage="Wrong e-Money PIN"
+                  isError={Boolean(errors.eMoneyPin)}
+                  errorMessage={errors.eMoneyPin?.message}
                 />
               </div>
             )}
-          </div>
+          </form>
         </div>
         <div className="summary-container">
           <h2>Summary</h2>
@@ -189,7 +289,7 @@ const Checkout = () => {
               2,
             )}`}</span>
           </div>
-          <PayModal cart={cart} grandTotal={grandTotal} />
+          <PayModal cart={cart} grandTotal={grandTotal} trigger={trigger} />
         </div>
       </div>
     </div>

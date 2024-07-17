@@ -29,6 +29,7 @@
 }
 .input:focus {
   outline: none;
+  border-color: #d87d4a;
 }
 
 .input-wrapper.error .input {
@@ -70,4 +71,32 @@
   align-content: center;
   width: 20px;
   height: 20px;
+}
+
+/* Tablets */
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .input-wrapper.error .error-message {
+    color: #cd2c2c;
+    position: absolute;
+    top: -50px;
+    left: 210px;
+    font-size: 12px;
+  }
+}
+
+/* Mobiles */
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .input-wrapper,
+  .radio-input-wrapper {
+    margin-top: 2rem;
+  }
+  .input-wrapper.error .error-message {
+    color: #cd2c2c;
+    position: absolute;
+    top: -50px;
+    left: 210px;
+    font-size: 12px;
+  }
 }

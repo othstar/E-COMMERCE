@@ -2,18 +2,23 @@ import './style.css';
 import { useState } from 'react';
 import Button from '../UI/Button';
 import Modal from 'react-modal';
-import { CartItem } from '../../static/types';
+import { CartItem, Inputs } from '../../static/types';
+import { UseFormTrigger } from 'react-hook-form';
 
 type PayModalProps = {
   cart: CartItem[];
   grandTotal: number;
+  trigger: UseFormTrigger<Inputs>;
 };
 
-const PayModal = ({ cart, grandTotal }: PayModalProps) => {
+const PayModal = ({ cart, grandTotal, trigger }: PayModalProps) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  const openModal = () => {
-    setIsOpen(true);
+  const openModal = async () => {
+    const result = await trigger();
+    if (result) {
+      setIsOpen(true);
+    }
   };
 
   const closeModal = () => {

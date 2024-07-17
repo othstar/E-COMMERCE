@@ -185,6 +185,8 @@
   margin-top: 2rem;
 }
 
+/* Tablets */
+
 @media (min-width: 481px) and (max-width: 1024px) {
   .checkout-wrapper {
     flex-direction: column;

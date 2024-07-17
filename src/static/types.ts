@@ -1,4 +1,5 @@
 import { HTMLAttributes, ReactNode } from 'react';
+import { UseFormRegister } from 'react-hook-form';
 
 export type CartItem = {
   amount: number;
@@ -28,6 +29,19 @@ export type ButtonProps = {
   onClick?: () => void;
 };
 
+export type Inputs = {
+  name: string;
+  email: string;
+  phoneNumber: number;
+  address: string;
+  zipCode: number;
+  city: string;
+  country: string;
+  paymentMethod: string;
+  eMoneyNumber?: number;
+  eMoneyPin?: number;
+};
+
 export type InputProps = {
   id?: string;
   type: string;
@@ -37,6 +51,7 @@ export type InputProps = {
   name?: string;
   label?: null | string;
   checked?: boolean;
+  register?: UseFormRegister<Inputs>;
 } & HTMLAttributes<HTMLInputElement>;
 
 export type Image = {
